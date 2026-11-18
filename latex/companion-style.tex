@@ -1,0 +1,27 @@
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.85in,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,enumitem,xcolor,fancyhdr,microtype}
+\usepackage[authoryear,round]{natbib}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal,breaklinks=true]{hyperref}
+\definecolor{ink}{HTML}{173B3F}
+\definecolor{teal}{HTML}{176C70}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.24}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlist{nosep,leftmargin=1.5em}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\textcolor{ink}{Complexification / companion reading}}
+\fancyhead[R]{\small 18 November 2026}
+\fancyfoot[L]{\small Conceptual research draft}\fancyfoot[R]{\thepage}
+\newcommand{\topic}[2]{\clearpage\section{#1}\textit{#2}\par}
+\newcommand{\status}[1]{\textcolor{teal}{\textbf{Status: #1.}}}
+\newcommand{\takeaway}[1]{\par\smallskip\textcolor{ink}{\textbf{Takeaway.}} #1\par}
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\indep}{\mathrel{\perp\!\!\!\perp}}
+\newcommand{\TV}{d_{\mathrm{TV}}}
+\newcommand{\references}{\clearpage\small\raggedright\bibliographystyle{plainnat}\bibliography{references}}

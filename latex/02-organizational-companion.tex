@@ -1,0 +1,223 @@
+\documentclass[11pt,letterpaper]{article}
+\input{companion-style}
+\hypersetup{pdftitle={AI islands and human control: mathematical companion},pdfauthor={Sandy Tanwisuth}}
+\begin{document}
+{\LARGE\bfseries\color{ink} AI islands and human control}\par
+{\Large A guided mathematical and reading companion}\par
+Sandy Tanwisuth \quad / \quad Research-group discussion draft
+
+\section{Which sources support which parts?}
+The organizational proposal asks whether changing AI communication and reporting can help people notice errors and make effective corrections. It is a testable design hypothesis. No cited paper establishes that human mediation is always better than direct, logged AI collaboration.
+
+\par\begin{tabularx}{\linewidth}{L{0.29\linewidth}Y}
+\toprule Reading & Role in this argument \\\midrule
+\textit{The Dimensional Balance of Power} \citep{xor2026balance} & Working proposal associated with Alec's presentation. Motivates AI islands and a complexity concern. The supplied document displays the byline XOR Labs. \\
+\textit{AI in a vat} \citep{rosas2025vat} & Rosas, Boyd, and Baltieri give the central technical bridge: preserve the interface for possible actions, not just one routine trajectory. \\
+\textit{From monoliths to modules} \citep{boyd2026modules} & Boyd and coauthors, including Rosas, study modular world models. Structural assumptions matter when translating modularity into organizational designs. \\
+\textit{Software in the natural world}; \textit{Causal blankets} \citep{rosas2024software,rosas2020blankets} & Background for predictive organization and interfaces. Neither source derives decision rights or legitimate objectives. \\
+\textit{Beliefs in Feedback Loops}; Schrader's notes \citep{anonymousFeedback,schraderReveal} & Mechanisms and alternatives to test: factored beliefs, hidden observations, reveal order, lookback, and nonlinear reconstruction. Supplied drafts, with qualifications. \\\bottomrule
+\end{tabularx}\par
+
+\textbf{Reading route.} Section 2 turns islands into a concrete workflow and defines the notation. Sections 3--4 explain action-conditioned models and a proposed report criterion. Sections 5--6 separate decision loss from representational complexity. Sections 7--8 translate the hypothesis into a pilot and conditional policy proposals.
+
+\status{conceptual design and proposed tests} The mathematical examples are small and explicit. The transducer experiments, neural replication, and human pilot remain unrun. The policy proposals are conditional research proposals, not findings about real organizations or statements of current law.
+
+\topic{An island is a specified workflow}{A fictional allocation task makes the design choices visible.}
+Consider two AI assistants helping a human allocate a small research budget. The evidence assistant checks applications and constraints; the planning assistant proposes an allocation. A human reviews the evidence handoff and retains final approval.
+\begin{center}
+\fbox{Evidence assistant}\ $\longrightarrow$\ \fbox{Human-reviewed report}\\[7pt]
+$\longrightarrow$\ \fbox{Planning assistant}\ $\longrightarrow$\ \fbox{Human decision}
+\end{center}
+The report preserves supporting evidence, uncertainty, dissent, constraints, and available corrections. Shared files, tool calls, and other message routes must also be specified. People can deliberate directly; the design is not a requirement that every human interaction be AI-mediated.
+\par\begin{tabularx}{\linewidth}{L{0.16\linewidth}L{0.30\linewidth}Y}
+\toprule Symbol & Meaning & Concrete example \\\midrule
+$G,\kappa$ & Controlled generator and transition kernel & Which messages and tools actually affect the workflow. \\
+$O$ & Observation rule & Whether the human sees a log or only a summary. \\
+$\tau(h)$ & Report of history $h$ & A handoff containing constraints and evidence. \\
+$D,\mathcal A_D(h)$ & Decision rights; feasible actions & Who can approve, reject, pause, or revise. \\
+$V,\ell$ & Normative objectives; chosen loss & Whose interests count and how errors are valued. \\
+$H,\Sigma$ & Horizon; feasible future policies & One allocation cycle; available corrections. \\
+$Q^\sigma(\cdot\mid h)$ & Outcome law under policy $\sigma$ after $h$ & Distribution of violations and task outcomes. \\
+$\varepsilon$ & Tolerance for a report test & Allowed discrepancy between outcome laws. \\\bottomrule
+\end{tabularx}\par
+
+\textbf{Keep the interventions separate.} Hiding an existing message changes $O$. Removing the channel changes $G$. Editing a handoff changes $\tau$ and may change the effective information received downstream. Moving approval rights changes $D$. Changing what counts as harm changes $V$ or $\ell$. These changes can interact, but answer different questions.
+\takeaway{``Human in the loop'' is underspecified. Name the information, timing, available corrections, and actual execution rights.}
+
+\topic{Why world models belong in this discussion}{A report should be tested against possible corrections.}
+The operator perspective in \citet[PDF pp. 4--6, 9--10]{rosas2025vat} is directly useful here. Model an assistant and its workflow by what happens when an allowed input changes. A smaller simulator is useful only for the interface it preserves.
+
+Let $S_t$ be hidden state, $A_t$ an action, and $Y_t$ the subsequent observed outcome. The kernel
+\begin{equation}
+ \kappa_t(y,s'\mid a,s)
+ =\Prb(Y_t=y,S_{t+1}=s'\mid \text{state }s,\text{ chosen action }a)
+\end{equation}
+specifies both an emitted outcome and a new state. This is a controlled model assumption. It cannot generally be recovered from observational logs without identifying assumptions and sufficient action coverage.
+
+\textbf{Step 1: track uncertainty.} With history
+$h_t=(a_0,y_0,\ldots,a_{t-1},y_{t-1})$, let $b_t(s)=\Prb(S_t=s\mid h_t)$.
+\textbf{Step 2: predict under a chosen action.}
+\begin{equation}
+ \Prb(Y_t=y\mid h_t,\text{choose }a)
+ =\sum_{s,s'}b_t(s)\kappa_t(y,s'\mid a,s).
+\end{equation}
+\textbf{Step 3: update after seeing the outcome.}
+\begin{equation}
+ b_{t+1}(s')=
+ \frac{\sum_s b_t(s)\kappa_t(y_t,s'\mid a_t,s)}
+ {\sum_{s,r}b_t(s)\kappa_t(y_t,r\mid a_t,s)}.
+\end{equation}
+The numerator weights transitions by the old belief. The denominator normalizes the probabilities. The action is chosen from the stated history; a policy with extra private state information would require a different conditioning model.
+
+\textbf{Numerical example.} Suppose a fixed binary constraint is violated ($s=1$) or satisfied ($s=0$), with prior $b(1)=1/2$. An inspection flags a violation with probability $0.8$ when it exists and $0.2$ otherwise. After a flag,
+\begin{equation}
+ b'(1)=\frac{(1/2)(0.8)}{(1/2)(0.8)+(1/2)(0.2)}=0.8.
+\end{equation}
+That is an updated belief under an assumed inspection model. It does not tell us whether a person is permitted to stop the plan or what trade-off they should accept.
+
+\textbf{What modularity adds.} \citet[PDF pp. 3--5, 22--25]{boyd2026modules} provide a language for modular input-output models. Their cited network results are feedforward and mechanistically stationary; feedback, adaptation, and empirical validation remain explicit limitations. Organizational use is a proposed extension.
+
+\topic{A proposed test of a reporting interface}{Which different histories can be summarized identically for a stated task?}
+\status{proposed sufficient-information criterion} Fix $G$, history coverage, horizon $H$, outcome vector, rights $D$, and policy family $\Sigma$. A policy in $\Sigma$ can use allowed reports, future observations, and actions. It cannot secretly use a distinction that the report erased.
+
+For histories $h,h'$ producing the same report, ask whether the \emph{same} policy $\sigma$ induces nearly the same outcome law:
+\begin{equation}\label{eq:report}
+ \tau(h)=\tau(h')\quad\Longrightarrow\quad
+ \sup_{\sigma\in\Sigma}
+ \TV\!\left(Q^\sigma(\cdot\mid h),Q^\sigma(\cdot\mid h')\right)
+ \leq\varepsilon.
+\end{equation}
+The supremum means the largest discrepancy over policies in the specified family. In a small finite experiment this can be a maximum over a finite list; in an organization it is a substantial modeling and estimation problem.
+
+\textbf{Step 1: understand the distance.} For discrete outcomes $o$,
+\begin{equation}
+ \TV(P,Q)=\frac12\sum_o|P(o)-Q(o)|.
+\end{equation}
+For ``constraint violation or no violation,'' suppose one policy gives laws $(0.1,0.9)$ and $(0.4,0.6)$ after the two histories. Then
+\begin{equation}
+ \TV=\tfrac12(|0.1-0.4|+|0.9-0.6|)=0.3.
+\end{equation}
+If $\varepsilon=0.05$, these histories fail the test for that policy. These numbers are illustrative; no pilot tolerance has been selected.
+
+\textbf{Step 2: interpret a failure.} The report merges situations that matter differently under an allowed correction. Refine it, restrict the claim to a narrower policy family, or document the lost capability. Do not improve the score by silently removing decision rights.
+
+\textbf{Step 3: understand the limits.} The criterion is strong. It is not necessary for preserving one optimal action under one loss: different outcome distributions can favor the same choice. It also ignores whether a human can understand the report promptly. Measure decision loss, comprehension, time, and effective authority alongside it.
+
+\textbf{Relation to existing work.} Action-conditioned predictive equivalence is already central to $\epsilon$-transducers \citep[PDF p. 10]{rosas2025vat}. The proposed application fixes a human reporting interface, correction family, and organizational outcome vector. No new general theorem or priority claim is asserted.
+\takeaway{A report can be sufficient for routine forecasts while insufficient for the corrections people are expected to make.}
+
+\topic{Decision loss: a simpler test with an exact example}{Hold the available actions and the objective fixed.}
+For a one-shot problem, let $W$ be the uncertain world, $h$ the full available history, and $r=\tau(h)$ the report. Define
+\begin{equation}
+ L_{\mathrm{full}}=\inf_{\pi}\E[\ell(W,\pi(h))],\qquad
+ L_{\mathrm{report}}=\inf_{\rho}\E[\ell(W,\rho(\tau(h)))].
+\end{equation}
+A report-based rule can be implemented by a full-information rule using $\pi=\rho\circ\tau$. With identical feasible actions and loss, and no extra processing costs in this idealized comparison,
+\begin{equation}
+ L_{\mathrm{full}}\leq L_{\mathrm{report}}.
+\end{equation}
+This is a policy-class inclusion argument, not evidence that real people do best when shown every detail. Human time, attention, and interpretation errors require an additional model or measurement.
+
+\textbf{The checked example.} Let independent fair bits $Z,R$ determine the next outcome. Routine action $u=0$ yields $Z'=1-Z$; switching $u=1$ yields $Z'=R$ and costs $1/5$. Loss is $\ell=1-Z'+u/5$ \citep{tanwisuth2026example}.
+\par\begin{tabularx}{\linewidth}{cccccY}
+\toprule $Z$ & $R$ & Routine loss & Switch loss & Full choice & $Z$-only choice \\\midrule
+0 & 0 & $0$ & $6/5$ & Routine & Routine \\
+0 & 1 & $0$ & $1/5$ & Routine & Routine \\
+1 & 0 & $1$ & $6/5$ & Routine & Switch \\
+1 & 1 & $1$ & $1/5$ & Switch & Switch \\\bottomrule
+\end{tabularx}\par
+Full information gives mean loss $3/10$. Seeing only $Z$, expected switch loss is $7/10$; switch for $Z=1$ and stay routine for $Z=0$. This gives mean loss $7/20$, so
+\begin{equation}
+ \Delta L=L_Z-L_{\mathrm{full}}=\tfrac7{20}-\tfrac3{10}=\tfrac1{20}.
+\end{equation}
+All the excess comes from $(Z,R)=(1,0)$, where the report induces switching at an extra loss of $1/5$. That state has probability $1/4$.
+
+\textbf{Transfer to a workflow.} A budget report might preserve expected benefit while hiding a binding eligibility constraint. The analogy motivates a test; it does not establish its frequency, institutional consequences, or the right normative loss. This example does not refute an action-complete predictive interface.
+\takeaway{Evaluate a report against specified decisions. Distinguish an ideal information comparison from actual human performance.}
+
+\topic{Complexity is a mechanism to investigate, not a control score}{Different uses of dimension measure different things.}
+Alec's presentation associates control difficulties with the complexity of the process to be modeled \citep{xor2026balance}. Comparing human and AI capacity needs matching units, tasks, approximation levels, and costs.
+\par\begin{tabularx}{\linewidth}{L{0.28\linewidth}Y}
+\toprule Quantity & What it measures \\\midrule
+$C_\mu=H(E_t)$ & Shannon entropy, in bits, of predictive causal states under a specified distribution. Not the number of real-valued coordinates. \\
+$\sum_i(d_i-1)$ & Free parameters of product categorical beliefs with factor sizes $d_i$. \\
+$\prod_i d_i-1$ & Free parameters of an arbitrary joint distribution on those factors. \\
+Probe rank or PCA dimension & A measurement depending on representation, data, linearity, and retained-variance threshold. \\
+Human review cost & Observed time, effort, errors, and successful corrections in a task. \\\bottomrule
+\end{tabularx}\par
+Predictive states are developed in \citet{rosas2024software}; the neural draft and Schrader notes motivate comparisons of representational forms \citep{anonymousFeedback,schraderReveal}.
+
+\textbf{How hidden variables can couple beliefs.} Let a hidden fair bit $U$ select the same value for two states: $R=Q=U$. If $U$ is observed, the conditional belief is a product of point masses. If hidden,
+\begin{equation}
+ p(r,q)=\tfrac12\,\mathbf1\{r=q=0\}
+       +\tfrac12\,\mathbf1\{r=q=1\}.
+\end{equation}
+Each marginal gives probability $1/2$ to each bit, but their product gives $p(0,0)=1/4$ instead of $1/2$. Marginalizing the shared variable produces a correlated mixture. This illustrates a mechanism, not a universal increase in neural dimension.
+
+\textbf{Why islands need not be superior.} Deleting a channel changes the generator. Hiding a message changes an observer's knowledge. Human mediation can reveal a constraint, but can lose evidence or overload reviewers. Common causes and correlated priors can sustain dependence without fresh communication. Identical software alone does not establish a covert channel.
+
+\textbf{A fair comparison.} Test exact joint filtering, factored approximations, compressed reports, and lookback or nonlinear reconstruction under specified priors and reveal schedules. Then test real comprehension and correction. Belief-table parameter counts are not a calibrated measure of authority or cognitive limits.
+
+\topic{A pilot that could support or weaken the proposal}{Compare communication arrangements before changing delegation.}
+\status{pilot sketch; protocol and experiment pending} Use fictional applications and constraints, with planted errors whose truth is known. Keep final human approval rights and shared-workspace permissions fixed initially.
+\par\begin{tabularx}{\linewidth}{L{0.27\linewidth}Y}
+\toprule Condition & Mechanism to test \\\midrule
+Direct logged collaboration & Assistants exchange messages; a human can inspect the log and retains final approval. \\
+Human relay & The same permitted handoff crosses through a human without content editing. Measure exposure, interruption, and timing. \\
+Human-edited handoff & The human can require clarification, flag uncertainty, and revise the report. Measure information changes and effort. \\\bottomrule
+\end{tabularx}\par
+If mediation helps, add a latency-matched condition before attributing the effect to communication structure. Vary delegation rights separately. Predefine materials, order/randomization, scoring, and analysis; account for learning across trials. Numerical thresholds and sample planning remain open.
+
+\textbf{Measure the correction path.} Define events: $E$ = relevant evidence reaches the reviewer; $U$ = they understand it; $A$ = an appropriate correction is authorized and selected; $F$ = it is carried out in time. For $K=E\cap U\cap A\cap F$,
+\begin{equation}
+ \Prb(K)=\Prb(E)\Prb(U\mid E)\Prb(A\mid E,U)\Prb(F\mid E,U,A).
+\end{equation}
+This is the chain rule, with no independence assumption. It is a diagnostic decomposition, not an estimated model or a claim that every successful route must follow these steps. An approval button addresses only part of the path.
+\par\begin{tabularx}{\linewidth}{L{0.28\linewidth}Y}
+\toprule Outcome & Operational definition to predefine \\\midrule
+Detection and correction & Fraction of planted-error trials recognized, and fraction corrected before consequential action. \\
+False intervention & Unnecessary rejection or revision on no-error trials. \\
+Recovery and quality & Remaining violations, recovery time, and task performance. \\
+Burden and standing & Review effort, lost information, whether affected people can challenge outcomes, and whose objections change decisions. \\\bottomrule
+\end{tabularx}\par
+\takeaway{Equal or better correction with direct logs at lower cost, or mediation that increases delay and errors, would weaken the islands hypothesis.}
+
+\topic{Conditional organizational and policy implications}{Formal sufficiency does not choose goals or allocate rights.}
+The theoretical bridge suggests where to investigate organizational design. The normative argument must be stated separately. A model can represent an objective; prediction does not establish that objective's legitimacy.
+\par\begin{tabularx}{\linewidth}{L{0.31\linewidth}Y}
+\toprule Proposed design & Evidence needed before recommending it \\\midrule
+Reviewed handoffs for consequential transitions & Better correction after accounting for delay, lost evidence, false interventions, and burden. \\
+Explicit pause, reject, revise, and recovery rights & Successful use before harm, with clear responsibility and workable recovery. \\
+Logged collaboration where direct exchange helps & Reviewers can find and use evidence before a decision, rather than only reconstruct it afterward. \\
+Preservation of dissent and appeal & People with standing can contest reports and objectives; their interests are not reduced to one agent's summary. \\\bottomrule
+\end{tabularx}\par
+
+\textbf{Keep multiple outcomes visible.} A pilot can record
+\begin{equation}
+ o=(\text{quality},\text{violations},\text{time},\text{effort},\text{appeal outcome}).
+\end{equation}
+If it aggregates outcomes as $\ell(o)=\sum_jw_j\ell_j(o_j)$, the weights, directions, scales, and any non-negotiable constraints require justification. Statistical sufficiency cannot supply those choices. Some rights may be constraints rather than quantities traded against efficiency.
+
+\textbf{A presentation-ready claim.} ``AI islands are a family of communication and authority designs. Their value would come from preserving the information and opportunities people need to correct a system. We should compare them with logged collaboration, test the costs, and state whose control we are trying to protect.''
+
+\textbf{What would change the position?} If direct collaboration supports correction with less effort, the case for mandatory relays weakens. If edited handoffs preserve rare constraints better, selective mediation becomes more plausible. If neither enables effective interventions, changing reports alone is insufficient; execution rights or the workflow may need revision.
+\takeaway{The immediate implication is a research program for correction and contestability. A general mandate for islands would outrun the present evidence.}
+
+\topic{Reading coverage and provenance}{Public theory, unpublished proposals, and completed work remain distinct.}
+\par\begin{tabularx}{\linewidth}{L{0.27\linewidth}Y}
+\toprule Source & Exact reading scope relevant to this companion \\\midrule
+AI in a vat, v1 & Cumulative PDF pp. 1--14 of 38; appendices unread. This pass: pp. 1, 4--6, 10. Versioned PDF and archive hashes match. \\
+Monoliths, v2 & Cumulative main text pp. 1--25 of 36; appendices unread. This pass: pp. 1, 3--5, 20--25. \\
+Software, v2 & Cumulative pp. 1--10, 14--30 of 33. This pass: pp. 1, 5--8. \\
+Blankets, v2 & All 12 pages read previously. This pass: pp. 1, 4--7. \\
+Feedback draft & pp. 1--10, 24--26, 36--38 of 40 in the reading record. Selected passages closely reread earlier on 18 November; experiments not rerun. \\
+Schrader notes & All 14 pages read previously; pp. 7--10 reread earlier on 18 November. This pass checked p. 1 for title and author. \\
+Dimensional Balance & All six substantive HTML sections and captions reviewed earlier on 18 November. This pass checked header, date, byline, and opening complexity argument. \\\bottomrule
+\end{tabularx}\par
+The supplied conversation informed the AI-islands question. All 169 numbered lines and its trailing sentence were reviewed earlier on 18 November. It contains transcription errors and does not establish an exact meeting date. The conversation and source drafts are not included in this public package.
+
+The correction example was rerun by exact enumeration. The report criterion, pilot, and policy implications remain proposals. The unavailable OpenReview full text \texttt{ypgrlbGTTw} and unresolved ``Strategic abstraction for multi-agent coordination'' citation are not evidence here. External-incident claims in the presentation draft were not independently checked and are not repeated as findings.
+
+Full citations follow. Missing authorship, dates, or public URLs are left explicit. Page counts and versions identify the actual texts used. Reading a formal claim does not mean all its appendix proofs were independently checked.
+\references
+\end{document}
