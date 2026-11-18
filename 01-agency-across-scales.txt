@@ -1,149 +1,114 @@
-Agency across scales
-Discussion package / Companion essay: AI islands
-Sandy Tanwisuth · Discussion draft · 18 November 2026
+When does a collective earn an agent model?Reading package / Full citations and reading coverageSandy Tanwisuth · Research draft 3 · 18 November 2026
 
-Agency across scales: boundaries, representations, and the capacity to act
+When does a collective earn an agent model?
 
-Computational mechanics helps identify which distinctions organize a system’s behavior. Neural-network studies can test whether a model represents and uses those distinctions. Describing the resulting organization as an agent requires a further account of how it acts and regulates outcomes.
+Core question: when does treating a collective as an agent explain its responses to change better than treating it as a predictive pattern?
 
-Conceptual synthesis with a developing formal proposal. Main argument followed by optional technical and evidence appendices.
 
-Full citations and reading guide · Mathematical companion (PDF) · LaTeX source. The companion explains the notation and each mathematical step.
 
-The connection I want to make
 
-A neural network, an organism, and an organization all contain interacting parts. Sometimes a description at a larger scale captures something stable and useful: a memory being retrieved, a coordinated response, or a team revising a plan. My question is what would justify treating that larger pattern as a unit with a capacity to act.
+A team can be predictable without pursuing a shared goal. It can pursue a shared goal while individual members have little influence over it. These possibilities motivate three separate questions: what makes a system an agent, when a group can be modeled as an agent, and whether that organization preserves people’s agency. This draft concentrates on the second. The organizational draft takes up the third; competing answers to the first constrain both.
 
-I propose to approach this through interfaces: the distinctions through which a system receives information, changes its surroundings, and sustains a pattern of behavior. This gives a route between computational mechanics and agency without assuming in advance that every module is an agent. It also gives us a practical question for interpretability: which internal distinctions matter when the system changes its behavior?
 
-The research program connects three objects that need separate treatment. There is the interacting process itself. There is an observer’s representation of that process, including a neural predictor’s learned representation. And, in a human organization, there is an allocation of decision rights. A simpler representation can help someone understand a process. Whether that person can redirect it depends on additional capabilities and authority.
+Working thesis, not a new theorem: predictive organization supplies candidate descriptions. A collective-agent model earns additional explanatory value when a restricted account of goals and policy adaptation predicts responses to specified interventions. The research task is to compare those descriptions on the same systems and identify where they disagree.
 
-When a higher level has a useful description of its own
 
-Computational mechanics groups histories that imply the same predictive distribution into causal states. The central idea is to retain the differences in the past that matter for the future. This creates a disciplined way to ask whether an apparent pattern supports a useful model. “Causal” here has a specific predictive meaning, with stronger intervention interpretations requiring additional assumptions. [1, PDF pp. 3–4]
+1. Existing work already answers part of the question
 
-Software in the Natural World applies this approach across levels. For a chosen macroprocess, informational closure asks whether its own history provides all the predictive information available from the microscopic history. The paper also defines causal-state closure and computational closure, and establishes relationships under its stated conditions. In particular, the implication from informational to computational closure discussed here applies to spatial coarse-grainings. [1, PDF pp. 5–8]
 
-This suggests a way to recognize meaningful higher-level organization: identify a macrodescription that captures relevant behavior and remains useful across the perturbations we care about. The second part is a proposed research requirement, beyond checking prediction in one observed regime. An invariant constant would be predictively closed but unhelpful for most tasks. We therefore need to state what the macrodescription retains, what it leaves out, and the conditions under which it works.
+Jørgensen, Weichwald, and Hammond (2026) formalize collective agency through mechanized causal models and causal abstraction. Their actor–critic example and voting application already show how to assess a higher-level agent model. We should use that framework rather than present “agency across scales” as an unaddressed problem. Hammond et al. (2023) supply the crucial distinction: changing an outcome while policies stay fixed differs from changing a mechanism that agents know about and respond to when choosing policies.
 
-Closure also concerns the relationship between descriptions at different scales. It does not require a candidate agent to stop exchanging information with its environment. A system can have a useful higher-level organization precisely because it responds to environmental inputs through a structured interface.
 
-How to identify a perception–action boundary
+Our narrower question is whether a macrodescription selected for predictive compression is also useful for predicting that second kind of response. The literature reviewed here does not establish that predictive closure supplies this guarantee. Nor have we established that nobody has studied this comparison. A benchmark connecting the two is a candidate contribution, contingent on further novelty review and informative results.
 
-Causal Blankets offers a complementary construction. Begin with a proposed division into a system and its environment. Ask which distinctions in the environment’s history help predict the system’s next state, given the system’s own history. Ask the corresponding question in the other direction. The resulting minimal dynamical statistics provide sensory and active sides of an informational interface. These can summarize histories rather than coincide with a visible physical surface. [2, PDF pp. 4–6]
 
-This is powerful because it makes boundaries investigable. However, the paper constructs a causal blanket for every bipartition. Existence alone therefore cannot select a uniquely correct agent. Its stronger result about independent trajectories conditioned on the blanket requires factorisable dynamics. The authors also explicitly limit counterfactual interpretations under partial observation. [2, PDF pp. 3, 6–7]
+2. “Agency” commits us to different kinds of evidence
 
-My proposed procedure is to compare candidate boundaries at a stated timescale and task: estimate the predictive interface, check what remains unexplained, and perturb the proposed sensory or active channels. A useful boundary should reveal how the system responds and should improve our explanation relative to plausible alternative partitions. In finite data, these are tests of an approximation over specified conditions, not a discovery certificate for the system’s one true boundary.
 
-What would make that organization agent-like?
+AccountWhat earns the attribution?What it leaves open here
 
-I would use a graded, task-relative account of agency. The following are working criteria for this project, rather than a theorem derived from either paper:
 
-Candidate property | What would count as evidence? |
+Kenton et al. (2022)Policies adapt when the consequences of actions change and the change is available to the system.The boundary may need to include learning or design; a frozen policy and its training process differ.
 
-Continuity of the organized unit | A comparable interface and organization persist over the timescale of the task, despite some changes in components or inputs. |
 
-Effective action | Changing the candidate’s outputs changes relevant environmental outcomes under an explicit intervention model. |
+Jørgensen et al. (2026)A rational, goal-directed macro model preserves distributions under aligned mechanism interventions.Utility, rationality, variable alignment, and intervention family are modeling commitments.
 
-Regulation through feedback | The system uses information to maintain or recover a specified target or viable range when conditions change. Compare it with a fixed or open-loop response. |
 
-Explanatory value at this scale | The collective description captures coordinated responses that a chosen collection of separate component models misses, at a measured explanatory or resource cost. |
+Barandiaran, Di Paolo, and Rohde (2009)An autonomous organization regulates coupling according to norms grounded in its own organization.Externally assigned reward maximization does not establish this stronger form of autonomy.
 
-A thermostat illustrates a minimal form of feedback regulation. More flexible goal revision, learning, and planning would support richer agency claims, but should not be built into a definition that excludes every simple controller. Conversely, a whirlpool may be a stable macrostructure without meeting the proposed goal-sensitive regulation criterion. These are conceptual examples, not empirical classifications established here.
 
-For a team, a candidate collective capacity could be maintaining a plan while replacing a member and revising the plan when evidence changes. That capacity can coexist with disagreement among members. A collective agency claim also leaves open whether its decisions are legitimate, whether participation is voluntary, and whose interests it serves. Neither predictive closure nor successful regulation settles moral status or political authority.
+List and Pettit (2006)A group robustly maintains and acts through rational representational and goal states.A behavioral surrogate does not itself explain institutional commitments or member control.
 
-What neural-network findings contribute
 
-The supplied Beliefs in Feedback Loops draft gives a concrete bridge. In small transformers trained on synthetic interacting processes, it reports decodable representations of separate predictive factors and interventions on those representations that change predictions toward specified counterfactual targets. It also reports settings in which hiding part of the observed stream increases the effective rank of the learned representation. These are results reported by the draft, not replications performed in this repository. [3, PDF pp. 4–9, 36–38]
 
-The conceptual opportunity is that an observer may learn a useful decomposition of an interacting system, and we can test which parts of that decomposition the observer actually uses. This would connect statistical structure to mechanistic interpretability. It does not establish that the represented factors are agents inside the transformer. A representation of another system’s state and a subsystem with its own capacity to act are different candidates.
+These are competing explanatory commitments, not successive boxes on a universal checklist. Montévil and Mossio (2015) concern mutually maintained constraints; their organizational closure is distinct from closure of predictive information. Kolchinsky and Wolpert (2018) ask which system–environment correlations matter causally for a specified measure of continued existence. A collective may preserve itself while disregarding its members. Neither persistence nor a fitted utility establishes legitimate authority.
 
-The draft already includes intervention evidence, so the next step should build on it: test selectivity across layers and new regimes, compare trained and randomly initialized models, and measure leakage into other factors. Decoding alone needs care because the draft reports substantial decoding performance at initialization. Simon’s working notes add another important comparison: a model can reconstruct information using earlier tokens or nonlinear computation rather than store a large joint table in its current activation. [3, PDF p. 5; 4, PDF pp. 7–10]
 
-The distinction that connects this to human control
+3. What computational mechanics contributes
 
-A representation that predicts routine behavior may omit information needed for an available correction. The repository’s checked example makes this precise. Let Z and R be independent fair bits. Routine behavior sets the next Z to 1 − Z. Switching instead sets it to R and incurs a cost of 0.2. A report containing only Z predicts the routine Z trajectory perfectly, yet at Z = 1 it cannot tell when switching is worth its cost. Its best decision rule incurs 0.05 more expected loss overall than a rule that also observes R. [5]
 
-This is a constructed one-step decision example, not evidence about organizations. Its point is limited and useful: predictive success depends on the regime and target being predicted. The missing R matters once a switch is available. Action-conditioned interfaces are already central to transducer work, including AI in a Vat. Our contribution would be to ask what happens when those interfaces must be usable by people with bounded attention and specified correction rights. [6, PDF pp. 4–6, 10]
+In Rosas et al., Software in the natural world, histories belong to the same predictive state when they imply the same distribution of future observations. Informational closure asks whether the macro past predicts the macro future as well as the micro past does. This provides a disciplined account of predictive organization. A constant macrovariable also passes trivially, so the outcome being retained matters.
 
-My working thesis is that agency across scales becomes more tractable when we study which interfaces preserve the capacity to respond under intervention. Computational mechanics proposes representations and boundaries. Neural experiments investigate their implementation and causal use. Organizational research asks whether people can use the resulting interfaces to notice mistakes and change decisions. Each step needs its own evidence, but the questions now connect.
 
-Optional appendix: the mathematical direction
+Causal blankets supplies minimal directional statistics across a chosen bipartition. The active side summarizes system history for predicting the environment; the sensory side does the reverse. Because the construction is available for every bipartition, blanket existence does not select an agent. Bruineberg et al. (2022) separately caution against converting a statistical modeling boundary into a physical or metaphysical conclusion without additional premises. Their critique concerns Markov-blanket interpretations; it is not a refutation of the causal-blanket construction.
 
-These expressions locate the formal work. They do not yet constitute a unified theory of agency.
 
-1. Predictive closure, following [1]
+The practical role of these tools is to propose and compare interfaces. We must then test actions, responses, and goals. A boundary discovered under one observation scheme can move when the available evidence or temporal grain changes.
 
-For a microprocess X and macroprocess Z obtained by a stated coarse-graining, a shorthand for informational closure is:
 
-I(Zfuture; Xpast | Zpast) = 0
+4. World models connect prediction to possible action
 
-Require this for the future horizons covered by the claim, with well-defined information quantities. The source’s formal framework assumes stationary discrete processes. For empirical work, specify a horizon, approximation tolerance, estimation method, and retained task information.
 
-2. A directional interface, following [2]
+Rosas, Boyd, and Baltieri, AI in a vat studies interfaces describing observations under possible action sequences. This is stronger than predicting a stream generated under one fixed policy. But an action-complete interface for a fixed environment does not automatically describe how other agents revise their policies when the rules change. Mechanized games make that adaptation explicit.
 
-If X is the candidate system and Y its environment, the active-side statistic A is a function of X’s history satisfying:
 
-Yt+1 ⟂ X≤t | (At, Y≤t)
+The now-public Ehrlich, Baltieri, Rosas, and Boyd (2026) gives a second bridge. Under its feedback construction and an initially factored belief, Bayesian updates preserve a product representation. Hiding exchanged tokens can break that factorization. Small transformers trained on the synthetic processes often encode and use the factors, with documented failures in some patching settings. This is evidence about how a predictor represents interacting processes. The paper’s use of transducers as “agents” does not, by itself, establish goal-directed agency in every represented factor or in the transformer.
 
-The sensory-side statistic reverses X and Y. Minimality is relative to the selected bipartition and conditional predictive distributions. This conditional independence alone does not authorize replacing the observed process with an arbitrary intervention.
 
-3. A proposed report criterion
+5. A simple discrimination before a large experiment
 
-Fix the controlled generator, history h, report τ(h), horizon H, outcome vector, and a family Σ of policies that can use only the allowed reports, future observations, and actions. Let Qσ(· | h) be the resulting outcome law when the same feasible policy σ runs after h. Consider:
 
-τ(h) = τ(h′) impliessupσ ∈ Σ dTV(Qσ(· | h), Qσ(· | h′)) ≤ ε
+Checked analytical illustration. Suppose a system chooses a binary action A and the outcome is Y = 1 XOR A XOR g. The desired outcome is Y = 1; g indicates whether actuation has been reversed. At g = 0, an adaptive controller A = g and a frozen controller A = 0 produce identical behavior. Once the reversal is announced, at g = 1, they separate: only the adaptive controller preserves Y = 1.
 
-This is a proposed sufficient-information test, not a novelty claim. History coverage, report updates, policy feasibility, horizon, and tolerance must be fixed. Exact enumeration is possible in a small known model. Organizational logs alone do not generally identify these laws. The condition is demanding and is not necessary for preserving one particular optimal action. Test task-specific decision regret alongside it. Keep action rights fixed for this comparison, then separately study changes in authority. No new regret theorem is asserted here.
 
-Claim and assumption ledger
+This two-regime calculation is elementary and follows the motivation of Kenton and Hammond. It is not a new discovery algorithm, a claim about consciousness, or evidence that a particular organization is an agent. Its purpose is to show why baseline predictive accuracy cannot settle adaptation. A richer learned policy might already encode both regimes; the relevant boundary and information available before policy choice must be stated. Executable calculation.
 
-Claim | Status and source | Boundary of the claim |
 
-Some macrodescriptions support self-contained predictive and computational structure. | Existing formal results. [1], PDF pp. 5–8. | Specified coarse-graining and process assumptions. No agency or legitimacy theorem. |
+6. A research comparison that could change our minds
 
-Minimal dynamical interfaces exist for each bipartition. | Existing formal result. [2], PDF pp. 4–7. | Does not uniquely select a system boundary. Strong trajectory decoupling requires factorisable dynamics. |
 
-Small trained networks represent and use predictive factors. | Reported draft experiments. [3], PDF pp. 5–9. | Synthetic processes, known reference beliefs. No independent replication here or general frontier-model claim. |
+Proposed, not run. Begin with small coupled controllers whose mechanisms and update rules are known. Include an actor–critic system as a positive control, a frozen or replay controller as a negative control, and an ordinary adaptive control baseline. Predeclare candidate collective boundaries, outcomes, utility hypotheses, and intervention families. Compare: a macro predictor selected for compression; a goal-based mechanized macro model; and a component model with explicit adaptation. Match training information and report model size, computation, and held-out error.
 
-Product-form updates can preserve factored beliefs. | Formal result in a working draft. [3], PDF pp. 24–26. | Requires the relevant existing product form, kernels, and timing. Seeing messages need not erase prior correlations. |
 
-Routine prediction can omit correction-relevant information. | Completed analytical example. [5]. | Four equally likely states, one decision, stated loss. No empirical generalization. |
+ComparisonEvidence that would matter
 
-Persistent organization, effective action, and feedback regulation support a graded agency attribution. | Proposed conceptual criteria in this essay. | Need competing models and task definitions. No universal necessity or sufficiency claim. |
 
-Interfaces preserving corrective decisions can help human control. | Research hypothesis. | Requires usable information, time, effective authority, and a separately justified objective. |
+Routine observations → announced mechanism changeDoes a small goal-based model generalize better at comparable cost, or does an ordinary adaptive model explain equally much?
 
-What remains open
 
-How should we compare candidate boundaries without selecting the task only to favor one? Which perturbations distinguish regulation from a coincidental regularity? Can a compact report preserve rare but consequential distinctions? How do the costs of human comprehension compare with a machine’s predictive resources? These are the next research questions, rather than gaps hidden by an agency score.
+Full observations → masked observationsDoes predictive dimension increase while strategic response remains simple? Keep the generator unchanged for this comparison.
 
-Rosas’s world-model work makes the action question explicit
 
-AI in a vat models the interface between possible actions and their outcomes. It distinguishes a generative world model, a belief representation, and a minimal predictive model. This is the strongest technical bridge from predictive organization to the information needed for correction. From monoliths to modules, coauthored by Fernando E. Rosas, adds composition and decomposition of such world models. Its cited version concerns feedforward, mechanistically stationary networks and explicitly leaves feedback, adaptation, and empirical validation open. Applying these tools to human–AI organizations is our proposed extension.
+Within-family → new intervention familyDoes an apparently successful macro utility fail after changing incentives or component access? Do not refit it on test outcomes.
 
-See Rosas, Boyd, and Baltieri (2025), PDF pp. 4–6, 9–10 and Boyd, Nowak, Hyland, Baltieri, and Rosas (2026), PDF pp. 3–5, 22–25. The mathematical companion works through a transducer kernel, a belief update, and the assumptions behind modular representations.
 
-Sources and reading scope
 
-[1] Fernando E. Rosas, Bernhard C. Geiger, Andrea I. Luppi, Anil K. Seth, Daniel Polani, Michael Gastpar, and Pedro A. M. Mediano, Software in the natural world: A computational approach to hierarchical emergence, v2, 5 June 2024. This drafting pass reread PDF pp. 2–8. Earlier recorded coverage: pp. 1–10 and 14–30 of 33. The paper’s causality qualifications on pp. 4 and 6 govern the interpretation here.
+The main hypothesis is that predictive compression and strategic explanatory value need not rank boundaries in the same order. The alternative is that, on the chosen tasks, predictive models or conventional adaptive controllers capture the relevant responses just as economically. That null result would limit the added value of agent language. MacDermott et al. (2024) offers a quantitative goal-directedness comparator, but its utility hypotheses and causal model must be fixed or evaluated on held-out cases. Flexible utility fitting can otherwise make an agency claim uninformative.
 
-[2] Fernando E. Rosas, Pedro A. M. Mediano, Martin Biehl, Shamil Chandaria, and Daniel Polani, Causal blankets: Theory and algorithmic framework, v2, 29 September 2020. This pass reread PDF pp. 1–7. Earlier recorded coverage: all 12 pages. The paper’s construction and qualifications, rather than a secondary account of Markov blankets, support this essay.
 
-[3] Beliefs in Feedback Loops: Factored Representations of Interacting Agents in Transformers, supplied anonymous ICLR 2027 review draft, archived 10 November 2026, SHA256 prefix 52e8f0c44838. This pass read/reread PDF pp. 1–9, 24–26, 36–38 through text with embedded LaTeXiT metadata removed. Earlier cumulative coverage also includes p. 10. Reported experiments were not independently rerun.
+For games with several equilibria, compare sets of admissible outcomes or specify and test an equilibrium-selection rule. Do not silently replace a set-valued model with a point prediction. Any claim about transfer to organisms or institutions would require additional evidence beyond these synthetic comparisons.
 
-[4] Simon Schrader, Coupled Transducers and Reveal Orders: Setup, supplied working draft, snapshot archived 10 November 2026. This pass reread PDF pp. 7–10. Earlier coverage: all 14 pages. Proposition 3(b) and approximation experiments are explicitly unchecked in the draft and are not used as established results.
 
-[5] Exact-enumeration script, existing repository example. No model or code change in this drafting pass. Rechecked for the presentation table on 18 November 2026.
+7. What we can claim now
 
-[6] Fernando E. Rosas, Alexander Boyd, and Manuel Baltieri, AI in a vat: Fundamental limits of efficient world modelling for agent sandboxing and interpretability, 38-page archived snapshot, retrieved 10 November 2026, SHA256 prefix 18f66e6a63c2. This pass reread PDF pp. 1–2, 4–6, 8–10. On 18 November 2026, the archived PDF was verified byte-for-byte against arXiv v1 (6 April 2025); the catalog now records that version. Earlier coverage: pp. 1–14, appendices unread.
 
-[7] Alexander Boyd, Franz Nowak, David Hyland, Manuel Baltieri, and Fernando E. Rosas. From monoliths to modules: Decomposing transducers for efficient world modelling. arXiv:2512.02193v2, 20 May 2026. Main text PDF pp. 1–25 read; appendices unread. This companion pass revisited pp. 1, 3–5, 20–25.
+We have an evidence-backed distinction between predictive organization, strategic adaptation, autonomous self-maintenance, and institutional agency. We have a checked illustration and a comparison to run. We do not yet have a new theorem linking closure to agency, a validated agency detector, or an empirical result favoring the proposed model.
 
-Discussion context: the local numbered meeting transcript, lines 25–38, 57–115, and 124–169, and Alec’s The Dimensional Balance of Power working draft dated 26 October 2026. The transcript contains transcription errors and does not establish a precise meeting date. Its claims about external incidents have not been independently checked and are not used as evidence here. All 169 numbered lines were reviewed for context.
 
-The unavailable OpenReview full text and unresolved “Strategic abstraction for multi-agent coordination” version remain excluded as evidentiary support. See the unresolved-source record.
+For discussion: which interventions should an agent model survive, and what predictive or explanatory advantage would justify using it? The companion develops the notation and shows exactly which pieces come from existing papers.
 
-Prepared for an interdisciplinary research discussion. This package completes a conceptual draft, not the proposed transducer experiment, neural replication, or organizational pilot.
+
+Mathematical companion · 20-minute presentation notes · Organizational draft
+
+
+Conceptual research proposal. Source results, checked illustrations, and unrun studies are identified separately. Source versions and exact reading coverage.

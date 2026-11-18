@@ -1,0 +1,87 @@
+{
+  "status": "exact analytical illustration; no empirical study",
+  "payoffs": {
+    "routine": {
+      "A": [
+        4,
+        0,
+        4
+      ],
+      "B": [
+        2,
+        3,
+        2
+      ]
+    },
+    "revised": {
+      "A": [
+        4,
+        0,
+        0
+      ],
+      "B": [
+        2,
+        3,
+        2
+      ]
+    }
+  },
+  "routine_partition": [
+    [
+      "C",
+      "E"
+    ],
+    [
+      "D"
+    ]
+  ],
+  "revised_partition": [
+    [
+      "C"
+    ],
+    [
+      "D",
+      "E"
+    ]
+  ],
+  "both_contexts_partition": [
+    [
+      "C"
+    ],
+    [
+      "D"
+    ],
+    [
+      "E"
+    ]
+  ],
+  "partitions_checked": 5,
+  "routine_full_and_routine_report_value": "11/3",
+  "revised_full_value": "3",
+  "revised_routine_report_value": "7/3",
+  "revised_report_regret": "2/3",
+  "only_A_partition": [
+    [
+      "C",
+      "D",
+      "E"
+    ]
+  ],
+  "only_A_revised_value": "4/3",
+  "mechanism_response_example": [
+    {
+      "g": 0,
+      "adaptive_action": 0,
+      "frozen_action": 0,
+      "adaptive_outcome": 1,
+      "frozen_outcome": 1
+    },
+    {
+      "g": 1,
+      "adaptive_action": 1,
+      "frozen_action": 0,
+      "adaptive_outcome": 1,
+      "frozen_outcome": 0
+    }
+  ]
+}

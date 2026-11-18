@@ -1,129 +1,127 @@
-AI islands and human control
-Discussion package / Companion essay: agency across scales
-Sandy Tanwisuth · Discussion draft · 18 November 2026
+What must people retain control over?Reading package / Full citations and reading coverageSandy Tanwisuth · Research draft 3 · 18 November 2026
 
-AI islands and human control: a design hypothesis
+What must people retain control over?
 
-AI islands could help if their boundaries give people usable opportunities to understand, challenge, and redirect collective decisions. Whether they do so depends on the information people receive, the time they have, and the authority they can exercise.
+Core question: which information and decision rights let people correct AI-assisted collective decisions when circumstances or authorized objectives change?
 
-Organizational and policy proposals for testing. No organizational trial or general safety guarantee is claimed.
 
-Full citations and reading guide · Mathematical companion (PDF) · LaTeX source. The companion explains the notation and each mathematical step.
 
-What I take from Alec’s proposal
 
-Alec’s presentation imagines AIs as islands within a connected human society: people retain direct relationships with one another, while exchanges among AIs pass through interfaces people can observe. The meeting’s first formulation emphasizes preventing direct AI-to-AI communication. The supplied written draft also considers a weaker requirement: observable and understood communication. These are related designs with different costs. [A, §§5–6; B, lines 111–136]
+A collective can become more effective at pursuing a goal while its members become less able to change what it does. The first draft asks when an agent model explains the collective. This draft asks what would preserve human direction of it. Neither collective intelligence nor a compact world model answers that second question.
 
-The idea connects to computational mechanics through the cost of understanding an interacting system. The supplied feedback paper gives conditions under which an observer can retain separate predictive beliefs about its components. It reports synthetic examples where hiding an exchange makes that representation more demanding. This motivates investigating communication interfaces as an organizational design variable. It does not establish that banning communication improves human control. [C, PDF pp. 4–9, 24–26, 36–38]
 
-I would preserve Alec’s concern about asymmetric visibility and human dependence, while recasting islands as a family of institutional arrangements. The practical question becomes: which arrangement lets people detect an important problem and successfully correct it, at an acceptable cost?
+Working hypothesis: useful oversight depends on preserving distinctions relevant to authorized corrections, together with effective rights to act on them. Human mediation of every AI message is one possible design, whose benefits and costs need comparison.
 
-What an island would mean in practice
 
-A useful specification has to distinguish the channel through which AIs exchange information from the permissions through which they affect the world. It also has to account for shared documents and tools, which can carry information even when direct messages are absent.
+1. Make the AI-islands proposal concrete
 
-Design choice | Concrete implementation | What it changes |
 
-Observation | Expose an existing exchange to a reviewer, with its context and source links. | The reviewer’s information. The underlying exchange can remain unchanged. |
+The supplied XOR Labs working draft, The Dimensional Balance of Power, associated with Alec’s presentation, motivates separating AI assistants into islands with human-mediated exchanges. The following workflow is our operationalization, not a claim that Alec specified every detail.
 
-Communication | Require a reviewed handoff before another AI receives a result, or remove a direct channel. | The process itself, including coordination possibilities and delays. |
 
-Reporting | Provide a structured summary with disagreement, evidence links, and a route to inspect the original. | Which distinctions a person receives and can recover. |
+Consider a fictional resource-allocation team. Each team member has an assistant that can inspect local materials and propose an allocation. A cross-team handoff includes the proposal, evidence links, uncertainty, assumptions, and disagreements. A person can revise or reject it, request the underlying evidence, and approve its transmission. A designated decision maker can revise the final plan before execution; affected team members have a specified appeal route. Assistants have bounded execution permissions.
 
-Execution authority | Allow drafts but require approval for a commitment, with enforceable limits on delegated tools. | Who can take consequential actions and how those actions can be stopped. |
 
-Objectives and standing | Specify whose interests count and who can challenge the decision. | The normative basis of the arrangement, independent of predictive efficiency. |
+That arrangement changes communication and authority. Merely hiding AI messages from a dashboard changes observation. Deleting an AI-to-AI channel changes the process itself. Assigning a person a veto changes available actions. Revising the allocation criterion changes the normative objective. These changes need separate descriptions and, where feasible, separate comparisons.
 
-These choices should not be collapsed into a single “human in the loop” label. A person who forwards a message without understanding it has supplied a route. A person who understands a message but cannot stop execution has supplied review. Neither arrangement by itself demonstrates effective control.
 
-A worked example: a research team allocating a small budget
+2. Coordination tells us what a summary must preserve
 
-Consider a proposed low-stakes pilot in which a team allocates a fictional research budget. An evidence assistant reviews proposals. A planning assistant recommends an allocation. Human participants agree on the evaluation criteria and can change them. No real funds move during the pilot.
 
-In the island condition, the evidence assistant writes to a private workspace. Its human partner reviews a handoff containing the recommendation, supporting sources, uncertainty, and any dissenting evidence. The planning assistant receives the approved handoff through a controlled input. Shared writable files and other tool routes are restricted or explicitly recorded. Human participants can speak directly, inspect the original evidence, and ask either assistant to reconsider. A designated human decision-maker authorizes the final allocation.
+Lauffer, Shah, Carroll, Dennis, and Russell (2023) define strategic equivalence: two co-policies are equivalent for a player if they induce the same entire set of best responses. The resulting partition identifies distinctions needed to recover that set. Their computational development focuses on common-payoff dynamic games; the paper states that the underlying theory extends to general-sum games.
 
-Suppose the evidence assistant misses a constraint affecting a small proposal. The review should let someone recover that evidence, challenge the recommendation, and obtain a revised plan before authorization. The practical test is whether the constraint survives the interface and changes the outcome. Simply recording that a human clicked “approve” would not answer that question.
 
-Even this design has a cost. People may become a bottleneck, lose context when summarizing, or rely too heavily on the first recommendation. Restricting AI collaboration could also prevent useful cross-checking. A direct, logged collaboration condition with the same execution permissions is therefore an essential comparator.
+This is a better starting point than requiring every person to reconstruct the whole system. But it is relative to a decision problem. A summary adequate for one objective and one set of available actions may fail when either changes. Preserving the whole best-response set is also stronger than preserving just one common optimal action. The mathematical companion keeps those requirements separate.
 
-What “people stay in control” should mean
 
-For this project, I propose evaluating control through a sequence of observable opportunities. A person receives relevant evidence in time, understands enough to recognize a problem, has standing and a feasible means to challenge it, and can cause an effective revision before the relevant consequence becomes irreversible. Record where this sequence fails.
+Our proposed extension is deliberately modest: evaluate the same reporting interface across a declared family of authorized decision contexts. The resulting partition is a common refinement of the existing task-specific partitions—an elementary construction, not a claimed new theorem. The open research problem is how to approximate and learn useful reports under changing contexts, limited human attention, and disagreement about goals.
 
-Measure successful correction separately from error detection. Also measure mistaken vetoes, delay, task quality, and human effort. Where several people are affected, record whose objection receives attention. An arrangement can strengthen a manager’s control while weakening that of employees or other affected people. “Human control” therefore needs a named subject and a stated scope.
 
-This links to the first essay’s proposed interface criterion: a summary should preserve the distinctions needed for the available corrective actions. Action rights remain a separate variable. A report might faithfully preserve every relevant fact while the organization gives its recipient no power to act on them.
+3. A worked example: useful compression can become insufficient
 
-Where islands could fall short
 
-Visibility can exceed comprehension. An exchange can be logged and still be too long, specialized, or ambiguous to review. A summary can be readable while omitting the rare fact that matters. Human mediation is therefore a hypothesis about usable oversight, not a certificate of semantic transparency.
+Checked illustration. Let C, D, and E be three equally likely collaborator co-policies, and let the focal person choose A or B. Payoffs below are invented, unitless values for that person’s stated objective; they are not measured organizational outcomes.
 
-Common causes can survive separation. Shared training, common inputs, or correlated initialization can produce similar behavior without a fresh message. The meeting raised precisely this concern. Identical software alone does not imply a secret runtime channel, but a ban on messages does not establish independent behavior either. The factorization proof in the supplied draft preserves an existing product form under specified operators; it does not show that observation eliminates arbitrary initial dependence. [B, lines 141–169; C, PDF pp. 24–26]
 
-Coordination can move elsewhere. Shared files, external tools, and changes in the environment can transmit information. The proposed island boundary must state which of these paths exist. A human relay can itself transmit information the reviewer does not understand. Removing a chat edge from a diagram establishes little about these other routes.
+Objective and actionCDE
 
-Isolation can reduce beneficial coordination. Separate assistants may duplicate work, miss contradictions, or produce incompatible plans. The user’s concern in the meeting about beneficial coordination is central: the objective is to preserve warranted collective action while keeping it contestable. Increased coordination and decreased human agency can occur together, so evaluate both. [B, lines 107–110]
 
-Local islands can conceal concentrated power. Separate assistant windows may still depend on one provider or one institution’s rules. A local communication protocol does not by itself create exit options, plural ownership, or legitimate authority. Those require additional institutional choices.
+Routine objective: A404
 
-A comparison that could teach us something
+Routine objective: B232
 
-Start with a small comparison at fixed final human authority and the same fictional task:
 
-Condition | Interaction | Question |
+Revised objective: A400
 
-Logged collaboration | AIs exchange results directly. People can inspect exchanges and source evidence. | How much correction can ordinary review support? |
+Revised objective: B232
 
-Human relay | The person reads and forwards the same handoff before the next AI proceeds. | Does the review gate help, and is the effect just additional time? |
 
-Human-edited handoff | The person checks and edits a structured report, retaining access to the original evidence. | Does active mediation preserve the evidence needed for correction? |
 
-Use the same case inputs and the same permissions over final execution. Log actual message contents, access to evidence, time, and effort rather than pretending that different communication routes produce identical information. Keep shared-workspace permissions constant in the first comparison. Add a delay-matched collaboration condition if mediation helps, to distinguish a review effect from a slowdown effect.
+For the routine objective, C and E can be summarized together: both call for A. D calls for B. After an authorized change in the objective, E calls for B while C still calls for A. With complete information, expected value is 3. Using the old C/E summary, the best achievable expected value is 7/3: inside that cell, A and B each average 2. The information loss costs 2/3.
 
-Then vary bounded delegation separately, so a communication effect is not confused with a change in authority. Introduce a known mistaken assumption, a changed constraint, or a consequential dissenting signal. Randomize task versions and condition order where feasible, and evaluate correction against criteria specified in advance. Set numerical success thresholds and sample size after a feasibility pilot, before the confirmatory study.
 
-The islands hypothesis gains support if mediation improves successful correction within agreed performance and effort limits. It weakens if logged collaboration performs as well, if delay alone explains the benefit, if reviewers miss more rare signals, or if coordination losses outweigh the improvement. A pilot should be able to favor a less restrictive design.
+Now remove the right to choose B. Every co-policy has the same feasible best response, A, so a constant report preserves the whole feasible best-response set. Yet expected value under the revised objective is only 4/3. Less information is “needed” partly because the person has lost a consequential option. This is why reporting quality and authority must be evaluated separately. The exact enumeration checks all five deterministic partitions of the three co-policies. It is an illustration, not a study of human behavior.
 
-What this suggests for policy discussion now
 
-The current work supports a research agenda and candidate governance requirements. It does not yet support a universal prohibition on AI-to-AI communication. An organization could ask deployments to demonstrate usable evidence access, a named correction authority, and an enforceable opportunity to intervene before specified commitments. These are proposed institutional requirements, with their costs and effectiveness still to be tested.
+4. Why lower predictive dimension is not the policy objective
 
-Conditional proposal | Reason and cost | Finding that would revise it |
 
-Require reviewed handoffs for decisions where mediation improves correction. | Creates an opportunity to challenge a plan, at a cost in reviewer time and latency. | Logged or delay-matched collaboration yields equal correction with less effort. |
+Ehrlich et al. (2026) shows that masking interactions can disrupt factorized beliefs in a predictor. That supports concern about losing useful structure. It does not imply that showing every interaction maximizes human control. A task-relevant summary can discard much predictive detail without changing a decision. Conversely, a compact summary can preserve the wrong objective perfectly.
 
-Preserve evidence access and an exception route when summaries lose consequential facts. | Makes omitted or dissenting evidence recoverable, with privacy and attention costs. | A simpler interface retains the same correction performance and coverage. |
 
-Bound delegation when execution outruns review. | Preserves time to intervene, at a cost in speed and autonomy. | Another control achieves the same recovery reliability with lower delay. |
+Rosas et al., AI in a vat clarifies why modeling available actions matters. Hammond et al. (2023) adds that announcing a new rule can change the policies of the other participants. An oversight test must therefore distinguish a surprise event under fixed policies from an announced change that agents can adapt to. A passive replay of a transcript cannot establish performance under both.
 
-Protect direct human deliberation and ways to contest or leave an arrangement. | Expresses a normative commitment to human participation and plural authority. | Revise the implementation through affected people’s deliberation. Predictive accuracy alone cannot settle the value commitment. |
 
-The bridge across scales is therefore specific. Computational mechanics helps us ask which interfaces preserve relevant information. Neural studies suggest ways to investigate whether a system represents and uses that information. Organizational design adds the question of who can act on it. AI islands are one candidate answer to that last problem, and their value should turn on whether people can actually redirect collective behavior.
+Santoni de Sio and van den Hoven (2018) provide a complementary normative account: meaningful human control requires responsiveness to relevant human reasons and a connection to humans who understand the system and their responsibility. These are proposed necessary conditions, not a validated measure for our pilot. A record of someone clicking “approve” establishes neither. We must also say whose reasons count; management preference, worker interests, and affected people’s claims may diverge.
 
-Discussion questions and status
 
-For Alec: Which part of the islands proposal is essential: preventing unreviewed communication, creating review time, preserving human-to-human deliberation, or limiting execution? Which comparison would persuade us to permit a direct AI channel?
+5. Compare mechanisms before recommending islands
 
-For Simon and David: What survives correlated priors, delayed observation, and access to earlier messages? Which neural interventions distinguish a useful predictive factor from a subsystem with an agent-like role?
 
-For the group: Whose corrections should the institution honor? Which disagreements must a report retain, even when those disagreements add little to average predictive accuracy?
+Proposed study, not run. Use the same fictional allocation tasks and outcome criteria in three designs:
 
-These are invitations to discussion, not assignments accepted by collaborators. The essays and presentation drafts are complete. The controlled transducer study, neural replication, and human pilot remain proposed. The pilot sketch is not a deployment-ready protocol: participant procedures, final task materials, numerical decision criteria, and sample planning still need development.
 
-Rosas’s world-model work makes the action question explicit
+DesignCommunicationHuman correction
 
-AI in a vat models the interface between possible actions and their outcomes. It distinguishes a generative world model, a belief representation, and a minimal predictive model. This is the strongest technical bridge from predictive organization to the information needed for correction. From monoliths to modules, coauthored by Fernando E. Rosas, adds composition and decomposition of such world models. Its cited version concerns feedforward, mechanistically stationary networks and explicitly leaves feedback, adaptation, and empirical validation open. Applying these tools to human–AI organizations is our proposed extension.
 
-See Rosas, Boyd, and Baltieri (2025), PDF pp. 4–6, 9–10 and Boyd, Nowak, Hyland, Baltieri, and Rosas (2026), PDF pp. 3–5, 22–25. The mathematical companion works through a transducer kernel, a belief update, and the assumptions behind modular representations.
+Logged collaborationAssistants exchange messages directly; reports retain evidence and provenance.A person can pause and revise before execution.
 
-Sources and provenance
 
-[A] XOR Labs, The Dimensional Balance of Power, working draft, 26 October 2026, SHA256 prefix 58410c3ad879. All six numbered substantive sections and figure captions reviewed in this pass. Its external incident narrative and universal complexity-to-control claims are not adopted as verified facts.
+Human-mediated islandsCross-team messages require review and forwarding.Match final correction rights and evidence access to the first design.
 
-[B] Local numbered meeting transcript, all 169 lines reviewed. Important locations: proposal and mediation, lines 111–136; beneficial coordination, lines 107–110; shared priors and hidden channels, lines 141–169. The recording date and some speaker attributions are uncertain, so no calendar date is inferred from “two weeks ago.” The transcript preserves ideas and questions, not independent verification of its technical or incident claims.
 
-[C] Beliefs in Feedback Loops, supplied anonymous ICLR 2027 review draft, archived 10 November 2026. Read/reread in this pass: PDF pp. 1–9, 24–26, 36–38. Especially p. 26 for preservation of product form and pp. 37–38 for the distinction between presentation budgets, belief-cloud ranks, and model ranks. No independent replication here.
+Delegation with escalationRoutine exchanges proceed; specified conflicts or uncertainty trigger review.Match final rights; vary when attention is requested.
 
-Conceptual foundations: Fernando E. Rosas, Bernhard C. Geiger, Andrea I. Luppi, Anil K. Seth, Daniel Polani, Michael Gastpar, and Pedro A. M. Mediano, Software in the natural world: A computational approach to hierarchical emergence, v2; Fernando E. Rosas, Pedro A. M. Mediano, Martin Biehl, Shamil Chandaria, and Daniel Polani, Causal blankets: Theory and algorithmic framework, v2; Fernando E. Rosas, Alexander Boyd, and Manuel Baltieri, AI in a vat: Fundamental limits of efficient world modelling for agent sandboxing and interpretability, v1, verified archived snapshot. Exact reading coverage, source limitations, and claim statuses appear in the companion essay and reading log.
 
-Recommendations above are conditional design proposals, not statements of current law or established organizational effects.
+
+First isolate reporting in a computational or replay task with the generator and rights held fixed. Then compare live communication arrangements, where mediation can alter timing and policy adaptation. Finally vary correction rights independently. This staging prevents a gain caused by a new veto from being attributed to message mediation, or a loss caused by delay from being attributed to compression.
+
+
+Include routine cases, concealed errors, cross-team inconsistencies, and an explicitly authorized change in priorities. Match model version, task resources, training, and evidence access. Measure correction success before execution, utility regret relative to a stated information benchmark, false interventions, time, workload, and whose objections affect the result. Where objectives conflict, report outcomes separately rather than quietly collapsing them into one team score.
+
+
+6. Predictions, alternatives, and failure conditions
+
+
+Islands may help when reviewing a handoff exposes missing evidence, allows a person to challenge a local assumption, and changes the eventual action. They may fail when reviewers rubber-stamp, lack expertise, cannot access the original evidence, or become bottlenecks. Humans can also forward errors between islands. Shared models and incentives can create correlated failures despite separated message channels.
+
+
+The main prediction is that context-relevant reports plus usable correction rights improve correction under changed conditions, at an acceptable attention cost. The rival explanation is that logged collaboration with targeted escalation achieves equal or better correction more quickly. If that happens, the case for universal human mediation weakens. If islands improve routine accuracy but worsen correction after a priority change, they have failed the central test.
+
+
+No numerical success threshold or sample size has yet been justified. The next protocol must specify them from task stakes, variance estimates, and what improvement would be practically meaningful, before confirmatory data collection. The toy payoff gaps are not empirical effect-size estimates.
+
+
+7. The organizational implication we can defend
+
+
+Specify the decisions people must be able to revisit, preserve access to evidence that can change those decisions, and test whether their interventions actually take effect. Treat the reporting map, communication process, permissions, and objective as separate design choices. This is a conditional research recommendation; the evidence reviewed here does not establish that AI islands generally outperform alternatives.
+
+
+For discussion: what must an affected person be able to notice, challenge, and change—and which design achieves that with tolerable burden?
+
+
+Mathematical companion · 20-minute presentation notes · Conceptual draft
+
+
+Conceptual research proposal. Source results, checked illustrations, and unrun studies are identified separately. Source versions and exact reading coverage.

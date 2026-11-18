@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-18",
+  "scope": "Targeted primary-text review, not a systematic review",
+  "entries": [
+    {
+      "anchor": "collective",
+      "source_id": "jorgensen2026_collective_v1",
+      "citation": "Frederik Hytting Jørgensen, Sebastian Weichwald, and Lewis Hammond. (2026). Causal Foundations of Collective Agency. arXiv:2605.00248v1, 30 April 2026; CLeaR 2026.",
+      "url": "https://arxiv.org/abs/2605.00248v1",
+      "coverage": "PDF pp. 1–13 of 31",
+      "use": "Closest prior work: mechanized causal abstraction and behavioral collective agency.",
+      "limit": "The abstraction framework, actor–critic result and voting application already exist; our comparison is a proposal.",
+      "version": "arXiv:2605.00248v1, 30 April 2026; PDF bears CLeaR 2026 / PMLR 323 header",
+      "sha256": "3c3a0b713f72cf6d59167611e8fdf662d36b4bb10a1bdeddd9a7352fc571c5d5"
+    },
+    {
+      "anchor": "games",
+      "source_id": "hammond2023_games_published",
+      "citation": "Lewis Hammond, James Fox, Tom Everitt, Ryan Carey, Alessandro Abate, and Michael Wooldridge. (2023). Reasoning about causality in games. Artificial Intelligence, 320, 103919. DOI: 10.1016/j.artint.2023.103919.",
+      "url": "https://doi.org/10.1016/j.artint.2023.103919",
+      "coverage": "PDF pp. 1, 3, 10–12, 15–17 of 53",
+      "use": "Object-level versus mechanism-level interventions; pre- and post-policy queries.",
+      "limit": "A change available to policy selection can induce adaptation. Multiple rational outcomes need sets or a selection rule.",
+      "version": "Artificial Intelligence 320 (2023), 103919; published PDF from Oxford repository",
+      "sha256": "4505fdec2e370fdafae988f772d2d707ed67cfefb3b2e6c136afe1b33cd901ea"
+    },
+    {
+      "anchor": "lauffer",
+      "source_id": "lauffer2023_pmlr",
+      "citation": "Niklas Lauffer, Ameesh Shah, Micah Carroll, Michael D. Dennis, and Stuart Russell. (2023). Who Needs to Know? Minimal Knowledge for Optimal Coordination. Proceedings of the 40th International Conference on Machine Learning, PMLR 202, 18599–18613.",
+      "url": "https://proceedings.mlr.press/v202/lauffer23a.html",
+      "coverage": "PDF pp. 1–7 of 15",
+      "use": "Strategic equivalence and the information needed to recover a best-response set.",
+      "limit": "Equal full best-response sets are stronger than one shared optimal action. Computational development focuses on common-payoff games; the paper states the theory extends to general-sum games.",
+      "version": "ICML 2023, PMLR 202:18599–18613; official 15-page proceedings PDF",
+      "sha256": "a5ecbbb01755e31d1545ea18fbd947965aec5244075f19214b8198bd48dbc074"
+    },
+    {
+      "anchor": "feedback",
+      "source_id": "ehrlich2026_feedback_v1",
+      "citation": "David A. Ehrlich, Manuel Baltieri, Fernando E. Rosas, and Alexander B. Boyd. (2026). Beliefs in feedback: Factored representations of interacting agents in transformers. arXiv:2611.02047v1, 1 November 2026.",
+      "url": "https://arxiv.org/abs/2611.02047v1",
+      "coverage": "PDF pp. 1–10, 24–25, 34–35 of 38",
+      "use": "Feedback factorization, observation masking, and reported neural belief-patching experiments.",
+      "limit": "Product-prior and timing assumptions matter. Some sns-containing settings fail to steer. Synthetic prediction evidence does not establish agency or human control.",
+      "version": "arXiv:2611.02047v1, 1 November 2026; 38-page public version",
+      "sha256": "c306dfa763eb3d7dd7043b57f0b18d613818e4e08a33dc127ab1955e8aa6d5ec"
+    },
+    {
+      "anchor": "kenton",
+      "source_id": "kenton2022_agents_v2",
+      "citation": "Zachary Kenton, Ramana Kumar, Sebastian Farquhar, Jonathan Richens, Matt MacDermott, and Tom Everitt. (2022). Discovering Agents. arXiv:2208.08345v2, 24 August 2022.",
+      "url": "https://arxiv.org/abs/2208.08345v2",
+      "coverage": "PDF pp. 1–6 of 34",
+      "use": "Counterfactual adaptation and the role of learning/design in the agent boundary.",
+      "limit": "Use the version actually read. The discovery theorems and their assumptions have not been fully audited here.",
+      "version": "arXiv:2208.08345v2, 24 August 2022",
+      "sha256": "d66630da296713734763916db30b9faabed6fda5f7ebf8c9bc9243d111899264"
+    },
+    {
+      "anchor": "barandiaran",
+      "source_id": "barandiaran2009_agency",
+      "citation": "Xabier E. Barandiaran, Ezequiel Di Paolo, and Marieke Rohde. (2009). Defining Agency: Individuality, Normativity, Asymmetry, and Spatio-temporality in Action. Adaptive Behavior, 17(5), 367–386. DOI: 10.1177/1059712309343819.",
+      "url": "https://doi.org/10.1177/1059712309343819",
+      "coverage": "PDF pp. 1, 5–8 of 20",
+      "use": "A contrasting autonomous account: regulation and norms grounded in organization.",
+      "limit": "Goal-directed behavior under an external payoff does not by itself meet this account.",
+      "version": "Adaptive Behavior 17(5):367–386 (2009); author-hosted published PDF",
+      "sha256": "7549d596aab54dbd00d130f1376c0457bc10c846843958665999a6f0d4b2d5ad"
+    },
+    {
+      "anchor": "constraints",
+      "source_id": "montevil2015_constraints",
+      "citation": "Maël Montévil and Matteo Mossio. (2015). Biological organisation as closure of constraints. Journal of Theoretical Biology, 372, 179–191. DOI: 10.1016/j.jtbi.2015.02.029.",
+      "url": "https://montevil.org/publications/articles/2015-mm-organisation-closure-constraints/",
+      "coverage": "PDF pp. 1, 8–13 of 23",
+      "use": "Mutual maintenance of constraints across timescales.",
+      "limit": "This organizational closure differs from predictive informational closure. Reading uses the 23-page author manuscript dated 9 March 2016.",
+      "version": "Author manuscript dated 9 March 2016, citing Journal of Theoretical Biology 372:179–191 (2015)",
+      "sha256": "46b270194589e1d713651881db585b192b8ed58b5a54ca86337a4a84013e9d24"
+    },
+    {
+      "anchor": "semantic",
+      "source_id": "kolchinsky2018_semantic",
+      "citation": "Artemy Kolchinsky and David H. Wolpert. (2018). Semantic information, autonomous agency and non-equilibrium statistical physics. Interface Focus, 8, 20180041. DOI: 10.1098/rsfs.2018.0041.",
+      "url": "https://doi.org/10.1098/rsfs.2018.0041",
+      "coverage": "PDF pp. 1–3 of 17",
+      "use": "Information assessed by causal contribution to a specified viability measure.",
+      "limit": "Only the opening framework and examples were read; later formal results are not used. Viability and scrambling interventions require specification.",
+      "version": "Interface Focus 8:20180041 (2018); published PDF",
+      "sha256": "96ec1360b30771bbd6dd54ce2e80f833072a9e40d9a74d3ee7bf27a2c9673e80"
+    },
+    {
+      "anchor": "list",
+      "source_id": "list2006_group",
+      "citation": "Christian List and Philip Pettit. (2006). Group Agency and Supervenience. The Southern Journal of Philosophy, 44(S1), 85–105. DOI: 10.1111/j.2041-6962.2006.tb00032.x.",
+      "url": "https://personal.lse.ac.uk/list/pdf-files/groupagencysupervenience.pdf",
+      "coverage": "PDF pp. 1–4 of 22",
+      "use": "Robust representational and goal states as a contrasting account of group agency.",
+      "limit": "Reading uses the author manuscript revised 11 January 2006. Aggregation impossibility proofs were not read.",
+      "version": "Author manuscript revised 11 January 2006; Southern Journal of Philosophy 44(s1):85–105",
+      "sha256": "87b9d6913b30c98b82e32c3df6ab14525808ce6a062118f89754480ada447ee5"
+    },
+    {
+      "anchor": "control",
+      "source_id": "santoni2018_control",
+      "citation": "Filippo Santoni de Sio and Jeroen van den Hoven. (2018). Meaningful Human Control over Autonomous Systems: A Philosophical Account. Frontiers in Robotics and AI, 5, 15. DOI: 10.3389/frobt.2018.00015.",
+      "url": "https://doi.org/10.3389/frobt.2018.00015",
+      "coverage": "PDF pp. 1, 7–9 of 14",
+      "use": "Tracking relevant human reasons; tracing to human understanding and responsibility.",
+      "limit": "Proposed necessary conditions, not a validated scale or evidence that islands outperform alternatives.",
+      "version": "Frontiers in Robotics and AI 5:15 (2018); published PDF",
+      "sha256": "74561ba48ca5e0ad6ef88dfdc8134f0783966f3360dc08927779645281497ea4"
+    },
+    {
+      "anchor": "meg",
+      "source_id": "macdermott2024_meg",
+      "citation": "Matt MacDermott, James Fox, Francesco Belardinelli, and Tom Everitt. (2024). Measuring Goal-Directedness. Advances in Neural Information Processing Systems, 37.",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/1551c01d7a3d0bf21e2518331e9f7074-Paper-Conference.pdf",
+      "coverage": "PDF pp. 1–5 of 20",
+      "use": "Maximum-entropy goal-directedness as a candidate quantitative comparator.",
+      "limit": "Utility and causal-model choices remain explicit. Appendix proofs and experiments unread.",
+      "version": "NeurIPS 2024, official proceedings PDF",
+      "sha256": "7b850f6735d66c7ba837983f9e9825e9cd4b3f1a830253eafc917830c2574d42"
+    },
+    {
+      "anchor": "software",
+      "citation": "Fernando E. Rosas, Bernhard C. Geiger, Andrea I. Luppi, Anil K. Seth, Daniel Polani, Michael Gastpar, and Pedro A. M. Mediano. (2024). Software in the natural world: A computational approach to hierarchical emergence. arXiv:2402.09090v2, 5 June 2024.",
+      "url": "https://arxiv.org/abs/2402.09090v2",
+      "coverage": "Cumulative PDF pp. 1–10, 14–30 of 33 from earlier review.",
+      "use": "Predictive causal states and closure.",
+      "limit": "Closure concerns specified variables and futures; a constant macro can pass. No unrestricted intervention guarantee."
+    },
+    {
+      "anchor": "blankets",
+      "citation": "Fernando E. Rosas, Pedro A. M. Mediano, Martin Biehl, Shamil Chandaria, and Daniel Polani. (2020). Causal blankets: Theory and algorithmic framework. arXiv:2008.12568v2, 29 September 2020.",
+      "url": "https://arxiv.org/abs/2008.12568v2",
+      "coverage": "All 12 PDF pages previously read.",
+      "use": "Minimal directional sufficient statistics across a chosen bipartition.",
+      "limit": "Blanket existence does not select an agent; whole-trajectory decoupling has additional assumptions."
+    },
+    {
+      "anchor": "vat",
+      "citation": "Fernando E. Rosas, Alexander Boyd, and Manuel Baltieri. (2025). AI in a vat: Fundamental limits of efficient world modelling for agent sandboxing and interpretability. arXiv:2504.04608v1, 6 April 2025.",
+      "url": "https://arxiv.org/abs/2504.04608v1",
+      "coverage": "PDF pp. 1–14 of 38 from earlier review; version verified by exact checksum.",
+      "use": "Action-conditioned interfaces and world-model presentations.",
+      "limit": "Do not replace a controlled action law with observational conditioning under feedback; a sufficient belief need not be minimal."
+    },
+    {
+      "anchor": "modules",
+      "citation": "Alexander Boyd, Franz Nowak, David Hyland, Manuel Baltieri, and Fernando E. Rosas. (2026). From monoliths to modules: Decomposing transducers for efficient world modelling. arXiv:2512.02193v2, 20 May 2026; initially submitted 2025.",
+      "url": "https://arxiv.org/abs/2512.02193v2",
+      "coverage": "PDF pp. 1–25 of 36 from earlier review.",
+      "use": "Background on modular world-model descriptions.",
+      "limit": "Formal feedforward setting; no general empirical result about all feedback networks. Further reading, not the central agency criterion."
+    },
+    {
+      "anchor": "bruineberg",
+      "citation": "Jelle Bruineberg, Krzysztof Dołęga, Joe Dewhurst, and Manuel Baltieri. (2022). The Emperor’s New Markov Blankets. Behavioral and Brain Sciences, 45, e183. DOI: 10.1017/S0140525X21002351.",
+      "url": "https://doi.org/10.1017/S0140525X21002351",
+      "coverage": "Target-article PDF pp. 1–3 of a 76-page treatment. Commentaries and response unread.",
+      "use": "The authors’ distinction between epistemic and ontological blanket interpretations.",
+      "limit": "Used as an interpretive caution, not a comprehensive assessment of active inference or a refutation of causal blankets."
+    },
+    {
+      "anchor": "balance",
+      "citation": "XOR Labs. (2026). The Dimensional Balance of Power. Supplied HTML working draft, 26 October 2026; associated with Alec’s presentation.",
+      "url": "",
+      "coverage": "Six substantive sections read in the earlier review.",
+      "use": "Motivation for testing AI islands.",
+      "limit": "No verified public URL or individual author byline. Our workflow details are an operationalization. No empirical superiority claim."
+    },
+    {
+      "anchor": "schrader",
+      "citation": "Simon Schrader. (n.d.). Coupled Transducers and Reveal Orders: Setup. Supplied 14-page working draft.",
+      "url": "",
+      "coverage": "All 14 PDF pages read in the earlier review.",
+      "use": "Background on reveal order, lookback, and reconstruction.",
+      "limit": "Proposition 3(b) and approximation experiments are explicitly unchecked in the supplied draft. Not used as an established result."
+    },
+    {
+      "anchor": "example",
+      "citation": "Sandy Tanwisuth. (2026). Exact illustrations of strategic reports, objective changes, and action rights. Repository-authored Python script, checked 18 November 2026.",
+      "url": "verify_strategic_reports.py",
+      "coverage": "All five deterministic partitions checked using exact rational arithmetic.",
+      "use": "Two elementary diagnostics used in the revised essays and companions.",
+      "limit": "No novelty or empirical-effect claim. Results depend on the explicit invented payoff table and uniform prior."
+    }
+  ]
+}

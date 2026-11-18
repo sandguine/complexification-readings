@@ -1,254 +1,209 @@
 \documentclass[11pt,letterpaper]{article}
 \input{companion-style}
-\hypersetup{pdftitle={Agency across scales: mathematical companion},pdfauthor={Sandy Tanwisuth}}
-\begin{document}
-{\LARGE\bfseries\color{ink} Agency across scales}\par
-{\Large A guided mathematical and reading companion}\par
-Sandy Tanwisuth \quad / \quad Research-group discussion draft
+\title{When does a collective earn an agent model?\\\large Mathematical companion and guided readings}
+\author{Sandy Tanwisuth}
+\date{Research draft 3 / 18 November 2026}
+\begin{document}\maketitle
+\textbf{Core question.} When does a collective-agent model explain responses to change better than a predictive macrodescription or an ordinary adaptive-control model?
 
-\section{Which papers support the argument?}
-The conceptual proposal is that useful higher-level organization can be studied through the distinctions a system preserves for prediction and action. An attribution of \emph{agency} needs additional evidence of effective action and feedback regulation. The first part draws on existing formal work; the agency criteria are a proposal for this project.
+This companion connects computational mechanics to causal games without equating their notions of sufficiency. It develops a comparison to investigate, not a new general definition of agency. The organizational companion asks what information and rights people need to correct the collective.
 
-\par\begin{tabularx}{\linewidth}{L{0.28\linewidth}Y}
-\toprule Reading & What it contributes \\\midrule
-\textit{Software in the natural world} \citep{rosas2024software} & Predictive causal states, informational closure, and the relation between micro and macro computations. Start with PDF pp. 3--8. \\
-\textit{Causal blankets} \citep{rosas2020blankets} & Directional sufficient statistics that define sensory and active interfaces for a chosen bipartition. Start with pp. 4--7. \\
-\textit{AI in a vat} \citep{rosas2025vat} & Rosas, Boyd, and Baltieri's action-conditioned interfaces, transducers, belief updates, and minimal predictive world models. Start with pp. 4--6 and 9--10. \\
-\textit{From monoliths to modules} \citep{boyd2026modules} & Boyd, Nowak, Hyland, Baltieri, and Rosas on composing and decomposing world models. Start with pp. 3--5, 22--25. \\
-\textit{Beliefs in Feedback Loops} \citep{anonymousFeedback} & Reported neural experiments on factored predictive representations. Anonymous review draft, not a verified public paper. \\
-\textit{Coupled Transducers and Reveal Orders: Setup} \citep{schraderReveal} & Simon Schrader's working notes on timing, lookback, and alternative representations. Some statements are explicitly unchecked. \\\bottomrule
-\end{tabularx}\par
+\textbf{What changed.} Collective agency is already formalized in \citet{jorgensen2026collective}; strategic reasoning about intervention is developed in \citet{hammond2023games}. These are foundations for the proposed comparison. The public feedback paper is now cited as \citet{ehrlich2026feedback}, with its verified author list and version.
 
-\textbf{Reading route.} Sections 2--4 explain predictive organization and boundaries. Sections 5--6 introduce world models and neural representations. Section 7 marks the proposed agency extension. Section 8 connects the argument to correction, with a fully worked example. Full author lists, exact versions, URLs, and the limits of reading coverage follow.
+\begin{tabularx}{\linewidth}{L{0.25\linewidth}Y}\toprule
+Claim status & Meaning here \\\midrule
+Source result & A definition or reported result in an identified primary text, within its assumptions. \\
+Checked illustration & An elementary finite calculation executed in this repository; no empirical inference. \\
+Proposed study & A comparison whose outcome is unknown. No neural or organizational experiment has been run here. \\
+Open choice & A boundary, objective, intervention family, or tolerance requiring justification. \\\bottomrule
+\end{tabularx}
 
-\status{exposition and proposed synthesis} These pages restate selected source constructions in a common notation. They do not present a new theorem of agency or a new experiment.
+\textbf{Suggested reading order.} Read Sections 1--2 for predictive organization, Section 3 for action-conditioned world models, and Sections 4--5 for agency. Section 6 explains what neural factorization does and does not add. Section 7 specifies the proposed comparison. All page locators refer to the exact PDF versions in Section 8.
 
-\topic{Notation and the basic predictive question}{What distinctions in the past are needed to predict the future?}
-\par\begin{tabularx}{\linewidth}{L{0.23\linewidth}Y}
-\toprule Symbol & Meaning \\\midrule
-$X_t, Z_t$ & Microscopic observation and chosen macroscopic observation at time $t$. \\
-$X_{<t}$ & Entire past $(\ldots,X_{t-2},X_{t-1})$, excluding the current time. \\
-$X_{t:t+L}$ & Future block $(X_t,\ldots,X_{t+L-1})$ of length $L$. All intervals here exclude their right endpoint. \\
-$x_{<t}$ & A particular realized history; capitals denote random variables. \\
-$\Prb(\cdot\mid\cdot)$ & Conditional probability; compare only histories on which the relevant laws are defined. \\
-$E_t=\epsilon(X_{<t})$ & Predictive causal state: the equivalence class of a history. \\
-$I(U;V\mid W)$ & Conditional mutual information: residual statistical dependence between $U$ and $V$ after knowing $W$. \\
-$U\indep V\mid W$ & Conditional independence; knowing $V$ adds no information about $U$ once $W$ is known. \\
-$f,g,\phi$ & Specified coarse-graining maps, not maps inferred by notation alone. \\\bottomrule
-\end{tabularx}\par
+\topic{Notation and the objects being compared}{The same mathematical symbol should not silently change its scientific role.}
+\begin{tabularx}{\linewidth}{L{0.22\linewidth}Y}\toprule
+Symbol & Meaning \\\midrule
+$X_t, Z_t=f(X_t)$ & Microstate and chosen macrovariable at time $t$. \\
+$X_{<t}, Z_{t:t+L}$ & Past before $t$; future block of length $L$, ending at $t+L-1$. \\
+$E_t^X$ & Predictive causal state: equivalence class of micro histories. \\
+$I(U;V\mid W)$ & Conditional mutual information; zero means conditional independence for the finite distributions used here. \\
+$A_t,Y_t,S_t$ & Action, emitted observation, hidden world state in the controlled model. \\
+$h_t,b_t$ & Action--observation history; posterior over $S_t$. \\
+$\kappa(y,s'\mid a,s)$ & Controlled emission/transition kernel. \\
+$V,\widetilde V$ & Object variables; mechanism variables governing their distributions or policies. \\
+$\pi,U,\mathcal R$ & Policy; utility function; rationality relation specifying admissible responses. \\
+$\tau,\omega$ & Maps from micro values and interventions to corresponding macro values and interventions. \\
+$\mathcal I,\mathcal U$ & Declared intervention family and candidate utility class. These are modeling choices. \\\bottomrule
+\end{tabularx}
 
-\textbf{Step 1: group histories by their predictions.} Following the computational-mechanics construction used by \citet[PDF pp. 3--5]{rosas2024software}, define
+\textbf{Five objects to keep separate.} A generator produces behavior. An observation map determines what an observer sees. A predictive representation summarizes that evidence. A policy-selection mechanism determines responses to changed rules. An institutional arrangement allocates rights and legitimate objectives. Changing one need not change the others.
+
+\textbf{Why several notions of agency remain.} The behavioral perspective asks whether a goal-based model predicts responses. The autonomous perspective asks how a system sustains its organization and norms \citep{barandiaran2009agency,montevil2015constraints}. Institutional group agency adds accounts of representational commitments and collective action \citep{list2006group}. None is reduced to another by the equations below.
+
+\topic{Predictive states, closure, and boundaries}{These identify predictive organization; they do not certify agency.}
+\textbf{Step 1: group histories by the predictions they support.} For histories with well-defined conditional laws,
 \begin{equation}
  x_{<t}\sim x'_{<t}\quad\Longleftrightarrow\quad
- \Prb(X_{t:t+L}=w\mid x_{<t})=\Prb(X_{t:t+L}=w\mid x'_{<t})
- \quad\text{for every }L\geq1,w.
+ P(X_{t:t+L}\mid x_{<t})=P(X_{t:t+L}\mid x'_{<t})\quad\forall L\geq1.
 \end{equation}
-Two histories belong to the same state if they give the same distribution of \emph{every finite future block}. Matching only the next-symbol distribution is insufficient in general.
+$E_t^X=[x_{<t}]$ is the corresponding causal state. It can discard distinctions irrelevant to the chosen future. The future of an independent coin needs no memory; an alternating binary process needs its phase.
 
-\textbf{Step 2: use the state as a sufficient summary.}
+\textbf{Step 2: ask whether the macro past is sufficient for the macro future.}
 \begin{equation}
- \Prb(X_{t:t+L}\mid X_{<t})=\Prb(X_{t:t+L}\mid E_t).
+ I(Z_{t:t+L};X_{<t}\mid Z_{<t})=0\quad\forall L\geq1.
 \end{equation}
-The state preserves the distinctions needed for these predictions. Minimality is relative to this predictive task and the class of history-based sufficient statistics. It does not mean that the original physical generator has the fewest possible hidden states.
-
-\textbf{Example.} For a fair independent coin, every history predicts the same future law, so one predictive state suffices. For an alternating binary sequence with unknown initial phase, the last observed bit distinguishes two predictive states. High randomness and a need to remember are different properties.
-
-\takeaway{A predictive causal state is an equivalence class of histories. The name alone does not establish an intervention effect under partial observation.}
-
-\topic{When does a macrodescription close?}{Predicting the macro from the macro itself.}
-Let $Z_t=f(X_t)$ be a spatial coarse-graining. More generally, the source also studies history-dependent coarse-grainings. The task here is to predict the future of $Z$, not to reconstruct every detail of $X$.
-
-\textbf{Step 1: compare two sources of predictive information.} Informational closure asks whether
-\begin{equation}\label{eq:closure}
- I(Z_{t:t+L};X_{<t}\mid Z_{<t})=0\qquad\text{for every }L\geq1.
-\end{equation}
-Read this as: after knowing the macroscopic past, learning the microscopic past provides no additional information about the macroscopic future.
-
-\textbf{Step 2: connect this to the paper's equality.} Since $Z_{<t}$ is a function of $X_{<t}$, the chain rule gives
+Since $Z_{<t}$ is determined by $X_{<t}$ for a spatial coarse-graining, the chain rule gives
 \begin{align}
- I(Z_{t:t+L};X_{<t})
- &= I(Z_{t:t+L};Z_{<t})
-   +I(Z_{t:t+L};X_{<t}\mid Z_{<t}).
+ I(Z_{t:t+L};X_{<t})&=I(Z_{t:t+L};Z_{<t})\\
+ &\quad+I(Z_{t:t+L};X_{<t}\mid Z_{<t}).\notag
 \end{align}
-Thus equation~\eqref{eq:closure} is equivalent to equal predictive information from the two pasts, whenever these quantities are well-defined. For finite variables, $I(U;V\mid W)$ is an average of
-$\log_2[p(u,v\mid w)/(p(u\mid w)p(v\mid w))]$; zero means conditional independence.
+Thus closure says that the micro past adds no predictive information once the macro past is known. \citet[PDF pp. 5--8]{rosas2024software} connect informational, causal, and computational closure under stated conditions. Their term ``causal closure'' is not an unrestricted intervention guarantee under partial observation. A constant $Z$ passes trivially; explanatory usefulness requires a nontrivial target.
 
-\textbf{Step 3: distinguish three kinds of closure.}
-\par\begin{tabularx}{\linewidth}{L{0.25\linewidth}Y}
-\toprule Concept & Test or interpretation \\\midrule
-Informational & The macro past predicts the macro future as well as the micro past does. \\
-Causal, in this paper & The macro's $\epsilon$-machine and its $\upsilon$-machine are equivalent up to relabeling. The latter groups micro histories by predictions of macro futures. \\
-Computational & Macro predictive states are a coarse-graining of micro predictive states: $E_t^Z=\phi(E_t^X)$. \\\bottomrule
-\end{tabularx}\par
-
-\status{source results, with assumptions} \citet[PDF pp. 5--8]{rosas2024software} establish equivalence of informational and causal closure and, for spatial coarse-grainings, implication of computational closure. The reverse implication does not hold generally. The source uses stationary discrete processes; empirical approximations need a stated horizon, tolerance, and estimation procedure.
-
-A constant macrovariable passes the closure test trivially. A useful macrodescription must also preserve something worth explaining. Closure relative to a microscale does not mean physical isolation from an environment, and under partial observation it does not supply unrestricted counterfactual guarantees.
-
-\takeaway{Closure can identify autonomous predictive organization. Agency and the value of the retained information remain further questions.}
-
-\topic{Finding a perception--action boundary}{First choose a bipartition; then ask what crosses it predictively.}
-Now $X$ denotes the candidate system and $Y$ its environment. This is a new use of $X$, separate from the micro/macro comparison. Write $X_{\leq t}=(X_{<t},X_t)$. Use superscripts on blanket variables to distinguish them from actions and hidden world states introduced later.
-
-\textbf{Step 1: define the active-side statistic.}
+\textbf{Step 3: characterize exchange across a chosen system/environment split.} Now write $B$ for a system and $C$ for its environment. An active-side statistic $A_t^{\rm bl}=F(B_{\leq t})$ satisfies
 \begin{equation}
- A_t^{\mathrm{bl}}=F(X_{\leq t}),\qquad
- Y_{t+1}\indep X_{\leq t}\mid(A_t^{\mathrm{bl}},Y_{\leq t}).
+ C_{t+1}\indep B_{\leq t}\mid(A_t^{\rm bl},C_{\leq t}).
 \end{equation}
-It says that $A_t^{\mathrm{bl}}$ retains the distinctions in the system's history needed to predict the environment's next observation, given the environment's own history.
+A sensory-side statistic reverses $B$ and $C$. Minimal directional statistics constitute the causal blanket \citep[PDF pp. 4--7]{rosas2020blankets}. Existence for each bipartition does not select one uniquely correct agent. Stronger whole-trajectory decoupling needs the source's factorisable-dynamics assumption.
 
-\textbf{Step 2: reverse the direction.}
+\takeaway{Use these tools to propose interfaces, then evaluate what those interfaces explain. Statistical shielding alone is not a physical-agent boundary \citep{bruineberg2022blankets}.}
+
+\topic{World models: predicting under available actions}{A fixed-policy stream and a controlled interface are different objects.}
+\citet[PDF pp. 4--6, 9--10]{rosas2025vat} study interfaces over possible action sequences. For a transducer,
 \begin{equation}
- S_t^{\mathrm{bl}}=G(Y_{\leq t}),\qquad
- X_{t+1}\indep Y_{\leq t}\mid(S_t^{\mathrm{bl}},X_{\leq t}).
+ \kappa(y,s'\mid a,s)=P(Y_t=y,S_{t+1}=s'\mid A_t=a,S_t=s),
+ \qquad\sum_{y,s'}\kappa(y,s'\mid a,s)=1.
 \end{equation}
-The sensory-side statistic retains the corresponding predictive distinctions in the environment's history.
+Here $\kappa$ specifies the controlled law, not an arbitrary conditional estimated from confounded observations.
 
-\textbf{Step 3: make each statistic minimal.} Merge system histories exactly when they yield the same law of $Y_{t+1}$ for every compatible environment history; do the reverse for sensory states. The pair of minimal directional statistics gives the causal blanket \citep[PDF pp. 4--6]{rosas2020blankets}.
-
-\textbf{A small example.} Suppose $Y_{t+1}=X_t\oplus N_t$ and $X_{t+1}=Y_t\oplus M_t$, where $\oplus$ is exclusive-or and the independent noise bits flip with probability $q\neq1/2$. Both current bits matter to the opposite next bit. In this example $A_t^{\mathrm{bl}}=X_t$ and $S_t^{\mathrm{bl}}=Y_t$ suffice; older history adds nothing. If $q=1/2$, each next bit is independent of the other current bit, so the directional statistics can be constant. This example is explanatory, not a fitted biological model.
-
-\textbf{What the construction does not establish.} A blanket exists for every bipartition under the source's framework. Existence therefore does not choose one uniquely correct agent. Stronger independence of entire trajectories conditioned on the blanket additionally requires factorisable dynamics:
-\begin{align}
-&p(x_{t+1},y_{t+1}\mid x_{\leq t},y_{\leq t})\\
-&\qquad=p(x_{t+1}\mid x_{\leq t},y_{\leq t})\,
- p(y_{t+1}\mid x_{\leq t},y_{\leq t}).\notag
-\end{align}
-This extra condition concerns simultaneous residual dependence; it is not the same as the two directional sufficiency conditions \citep[PDF pp. 6--7]{rosas2020blankets}.
-\takeaway{A blanket is a candidate informational interface, often summarizing histories rather than tracing a physical surface. Compare candidate boundaries and test their explanatory use.}
-
-\topic{The world-model bridge: actions change the prediction problem}{The most direct Rosas connection is AI in a vat.}
-\citet[PDF pp. 4--6, 9--10]{rosas2025vat} study interfaces that describe outcomes for possible action sequences, and world models that generate these interfaces. This adds the question: \emph{what would be observed if an allowed action changed?}
-
-\par\begin{tabularx}{\linewidth}{L{0.25\linewidth}Y}
-\toprule Symbol & Meaning in the controlled model \\\midrule
-$S_t,s$ & Hidden world state before the action; a value of that state. \\
-$A_t,a;\ Y_t,y$ & Action chosen at $t$; outcome emitted after that action. \\
-$h_t=(a_0,y_0,\ldots,a_{t-1},y_{t-1})$ & Available action/outcome history before $A_t$. \\
-$\kappa_t(y,s'\mid a,s)$ & Probability of emitting $y$ and moving to $s'$ from $s$ under $a$. \\
-$b_t(s)$ & Belief $\Prb(S_t=s\mid h_t)$, a probability distribution over states. \\\bottomrule
-\end{tabularx}\par
-
-\textbf{Step 1: specify a generator.} A transducer has initial distribution $p_0$ and a normalized nonnegative kernel $\kappa_t$, with $\sum_{y,s'}\kappa_t(y,s'\mid a,s)=1$. Under externally supplied actions,
+\textbf{Step 1: construct a trajectory for externally supplied actions.}
 \begin{equation}
  P^{a_{0:T}}(y_{0:T},s_{0:T+1})
- =p_0(s_0)\prod_{t=0}^{T-1}\kappa_t(y_t,s_{t+1}\mid a_t,s_t).
+ =p_0(s_0)\prod_{t=0}^{T-1}\kappa(y_t,s_{t+1}\mid a_t,s_t).
 \end{equation}
-Here $s_{0:T+1}$ contains $T+1$ states. Summing over these states gives the observable interface. Under feedback, use a policy $\pi(a_t\mid h_t)$ in the joint trajectory law. Do not substitute observational conditioning on an action sequence for this controlled construction: chosen actions may themselves reveal past outcomes.
+The notation $a_{0:T}$ contains $T$ actions. Summing the hidden states gives the observable interface. With feedback actions, multiply each factor by $\pi(a_t\mid h_t)$ to specify the joint policy-controlled process. Conditioning on an observed sequence of actions need not equal externally setting that sequence.
 
-\textbf{Step 2: update a belief.} After choosing $a_t$ and observing $y_t$,
+\textbf{Step 2: update beliefs from observations.}
+\begin{equation}
+ b_{t+1}(s')=\frac{\sum_s\kappa(y_t,s'\mid a_t,s)b_t(s)}
+ {\sum_{s,s'}\kappa(y_t,s'\mid a_t,s)b_t(s)}.
+\end{equation}
+The denominator is the probability of the observed output and must be positive. The numerator predicts both the next hidden state and the observation; normalization converts it into a posterior. A mixed-state presentation is sufficient but need not be a minimal predictive representation.
+
+\textbf{Step 3: identify what has not been included.} This construction fixes a generator. If another participant learns or changes its policy after a rule change, that adaptation must be included in the state and dynamics or explicitly modeled at the mechanism level. An interface complete for actions in one specified environment is not automatically complete for every change to the environment's rules.
+
+\takeaway{Action-conditioned world models supply a precise bridge from prediction to intervention. Causal games add a model of how policies themselves respond.}
+
+\topic{Causal games and a collective-agent model}{The relevant interventions can change the rules used to choose actions.}
+\textbf{Step 1: distinguish an action from a policy.} A decision rule $\pi(a\mid o)$ determines actions conditional on available observations. A mechanism variable $\widetilde A$ can represent that rule; other mechanism variables represent environmental parameters. Mechanism-level edges encode how rules depend on those parameters or other rules \citep[PDF pp. 10--12]{hammond2023games}.
+
+\textbf{Step 2: specify rationality rather than assume one answer.} For fixed context $c$ (the other mechanisms), the best-response relation is
+\begin{equation}
+ \mathrm{BR}_{U}(c)=\arg\max_{\pi\in\Pi}\E_{\pi,c}[U(V)].
+\end{equation}
+This is a \emph{set}. A selected response $F_{\widetilde A}(c)$ is rational if it belongs to this set for each allowed context. Other rationality relations can model bounded or different decision principles. Multiple equilibria produce sets of outcome distributions; a point prediction requires a justified selection rule.
+
+\textbf{Step 3: ask whether the macro model preserves interventions.} Let $\mathcal P_L^i$ denote the set of micro outcome distributions consistent with the intervened mechanism model, and $\mathcal P_H^{\omega(i)}$ the corresponding macro set. A compact restatement of the source's mechanized abstraction condition is
+\begin{equation}
+ \{\tau_\#P:P\in\mathcal P_L^i\}=\mathcal P_H^{\omega(i)}
+ \qquad\text{for every admissible }i.
+\end{equation}
+$\tau_\#P$ means: sample micro variables under $P$, map them using $\tau$, and take the resulting macro distribution. In the finite case,
+$[\tau_\#P](z)=\sum_{v:\tau(v)=z}P(v)$.
+The source additionally specifies disjoint variable alignments and induced partial intervention maps; this compact equation does not replace those conditions. Strong abstraction requires that all macro mechanism settings be implementable through the relevant maps \citep[Definitions 13--15, PDF pp. 7--8]{jorgensen2026collective}.
+
+A high-level mechanism can then qualify as a goal-directed agent relative to its rationality relation and utility. The source proves an actor--critic abstraction and studies voting mechanisms. We are not claiming those constructions as our contribution.
+
+\takeaway{Constant utility makes rationality vacuous. Restrict utility hypotheses and interventions before evaluation; test informative adaptation rather than fit goals after observing the answer.}
+
+\topic{An elementary diagnostic and the limits of its interpretation}{Baseline equivalence can conceal a different response to changed mechanisms.}
+\status{checked analytical illustration} Let $g\in\{0,1\}$ indicate a publicly announced actuation reversal. The desired outcome is $Y=1$, with
+\begin{equation}
+ Y=1\oplus A\oplus g,
+ \qquad A_{\rm adaptive}=g,\quad A_{\rm frozen}=0.
+\end{equation}
+The operator $\oplus$ is exclusive-or. Here $g$ is available to policy selection; withholding it changes the problem.
+\begin{center}\begin{tabular}{ccccc}\toprule
+$g$ & Adaptive $A$ & Frozen $A$ & Adaptive $Y$ & Frozen $Y$\\\midrule
+0&0&0&1&1\\1&1&0&1&0\\\bottomrule\end{tabular}\end{center}
+At baseline both systems have the same observed output. Under the announced reversal only one preserves the target. The calculation is exhaustive and reproducible \citep{tanwisuth2026strategic}.
+
+This illustrates the distinction motivating \citet{kenton2022agents} and \citet{hammond2023games}; it does not identify a new phenomenon. A conditional controller that already implements $A=g$ can realize the adaptive response. The example does not distinguish sophisticated deliberation from a simple controller, demonstrate self-generated norms, or prove that the system is a collective agent.
+
+\textbf{Why a stricter notion would need more.} \citet[PDF pp. 5--8]{barandiaran2009agency} relate agency to the regulation of coupling and norms grounded in the system's organization. \citet[author PDF pp. 10--13]{montevil2015constraints} analyze dependence among constraints that maintain one another. Neither property follows from the two-row action table.
+
+\citet[PDF pp. 1--3]{kolchinsky2018semantic} assess information through its causal contribution to viability, using a specified viability function and scrambling interventions. This differs from maximizing an externally assigned task reward. \citet[author PDF pp. 1--4]{list2006group} discuss robust representational and goal states in group agency. Group-level rationality also does not establish that each member can redirect the group.
+
+\takeaway{Treat the operational agency claim as a bounded hypothesis. State which stronger meanings of agency it leaves unresolved.}
+
+\topic{Neural representations of feedback}{Factorized predictive beliefs are useful evidence about computation.}
+\status{source result} The public paper is \citet{ehrlich2026feedback}, arXiv v1, 1 November 2026. For the source's delayed feedback presentation, write its token-labeled update operator as
+\begin{equation}
+ V^{xy}=T^{y\mid x}\otimes\overline U^{x\mid y}.
+\end{equation}
+$\overline U$ includes the delayed action variable; replacing it with an undelayed component changes the model. Suppose the current belief is $b=b_R\otimes b_{SX}$ and the token has positive probability. Then
 \begin{align}
- \widetilde b_{t+1}(s')&=\sum_s b_t(s)\kappa_t(y_t,s'\mid a_t,s),\\
- b_{t+1}(s')&=\frac{\widetilde b_{t+1}(s')}{\sum_r\widetilde b_{t+1}(r)}.
+ b'&=\frac{(T\otimes\overline U)(b_R\otimes b_{SX})}
+ {(\mathbf1^TTb_R)(\mathbf1^T\overline U b_{SX})}\\
+ &=\frac{Tb_R}{\mathbf1^TTb_R}\otimes
+ \frac{\overline U b_{SX}}{\mathbf1^T\overline U b_{SX}}.
 \end{align}
-First weight possible transitions by the old belief; then normalize by the probability of the observed outcome. This assumes a known generator and a policy using the stated history and independent randomization, without extra hidden-state information.
+The second line uses $(A\otimes B)(x\otimes y)=Ax\otimes By$. This is preservation of a product prior, not a claim that arbitrary correlated beliefs become products \citep[PDF pp. 24--25]{ehrlich2026feedback}.
 
-\textbf{Step 3: minimize predictive distinctions.} Group histories only if they predict the same output laws for all future input strings and horizons. This is the $\epsilon$-transducer construction. Different beliefs can still induce the same predictions, so a belief-state presentation need not be minimal. A minimal predictive model, a small generative simulator, and an interpretable physical mechanism are different design targets.
-
-\topic{From modular world models to neural representations}{A useful connection, with structural assumptions that matter.}
-\citet[PDF pp. 3--5, 22--25]{boyd2026modules} study when an interface can be decomposed into smaller transducers. In the version cited, the network results concern \emph{feedforward, mechanistically stationary} transducers. They do not automatically establish a decomposition theorem for adaptive organizations with feedback.
-
-For intuition, take two sequential modules with hidden states $R,Q$. Module 1 maps input $a$ to $u$; module 2 receives $(a,u)$ and emits $v$. A compatible composite kernel is
+If $x$ is hidden, the observer must use
 \begin{equation}
- K(u,v,r',q'\mid a,r,q)
- =K_1(u,r'\mid a,r)K_2(v,q'\mid a,u,q).
+ W^y=\sum_x T^{y\mid x}\otimes\overline U^{x\mid y}.
 \end{equation}
-This equation is a \emph{model assumption}: it specifies the dependencies and independent transition randomness. It does not follow from naming two departments or splitting a neural activation into two vectors. The paper's decomposition problem asks when a joint process admits suitable modular structure.
+A sum of products need not itself be one product. The generator can stay unchanged while observation becomes less favorable to factorization.
 
-\textbf{Why observability matters.} With a product prior $b(r,q)=b_R(r)b_Q(q)$, observing both $u$ and $v$ makes the unnormalized posterior
+For factor state-space sizes $d_i$, storing a product belief requires $\sum_i(d_i-1)$ free probability parameters, whereas an arbitrary joint belief requires $\prod_i d_i-1$. These count distribution-family parameters. Reachability, alternative decompositions, nonlinear encodings, and approximation can change the representational comparison. They are not universal minimum neural widths or measures of human capacity.
+
+\textbf{Reported neural evidence.} In synthetic settings the paper finds decodable factors and successful targeted edits, but reports failures in loops containing an \texttt{sns} factor. Read and write subspaces differ, and patching construction matters \citep[PDF pp. 5--9, 34--35]{ehrlich2026feedback}. No replication was performed here. A useful factor is not automatically a goal-directed subagent.
+
+\topic{The proposed comparison}{What would make this a research contribution rather than a connection between papers?}
+\status{proposed, not run} Predeclare candidate boundaries, target outcomes, a utility class $\mathcal U$, and intervention families $\mathcal I$. Compare a predictive macro model, a mechanized goal-based macro model, and a component-level adaptive model at stated information and computation budgets.
+
+For single-distribution models under an explicit selection rule, one possible diagnostic is
 \begin{equation}
- \widetilde b'(r',q')=
- \underbrace{\sum_r b_R(r)K_1(u,r'\mid a,r)}_{\alpha(r')}
- \underbrace{\sum_q b_Q(q)K_2(v,q'\mid a,u,q)}_{\beta(q')}.
+ \epsilon_{\mathcal I}=\max_{i\in\mathcal I}
+ d_{\rm TV}(\tau_\#P_L^i,P_H^{\omega(i)}),\qquad
+ d_{\rm TV}(P,Q)=\tfrac12\sum_z|P(z)-Q(z)|.
 \end{equation}
-Its normalization is $(\sum_{r'}\alpha(r'))(\sum_{q'}\beta(q'))$, so the normalized posterior remains a product. If $u$ is hidden, one must sum over it: a sum of product terms generally need not itself factor. Correlated priors also invalidate this simple argument. This elementary example illustrates the mechanism; the feedback draft has its own timing and delay-state construction \citep[PDF pp. 24--26]{anonymousFeedback}.
+This is a proposed finite benchmark criterion, not the exact metric used in the collective-agency paper. For sets of equilibrium distributions, specify an appropriate set distance or report bounds instead. Do not silently pick a favorable equilibrium.
 
-\textbf{Why ``dimension'' needs a qualifier.} For $N$ factors with $d_i$ possible states, a product distribution can be specified using
-\begin{equation}
- D_{\mathrm{fact}}=\sum_{i=1}^N(d_i-1),\qquad
- D_{\mathrm{joint}}=\prod_{i=1}^N d_i-1
-\end{equation}
-free probability parameters. With two binary factors these counts are $2$ and $3$. They count parameters of these distribution families, not a universal minimum neural width or human cognitive capacity. Reachable beliefs, nonlinear encodings, retrieval from earlier tokens, and approximation change the representational comparison \citep[PDF pp. 7--10]{schraderReveal}.
+\begin{tabularx}{\linewidth}{L{0.28\linewidth}Y}\toprule
+Comparison & Interpretation \\\midrule
+Routine vs. mechanism change & Tests whether a model captures policy adaptation beyond baseline prediction. \\
+Full vs. masked observation & Tests information loss while holding the generator fixed. \\
+Within vs. outside fitted intervention family & Tests scope; a newly fitted utility on test cases does not demonstrate transfer. \\
+Matched adaptive-control baseline & Tests whether agent language adds explanatory economy beyond conventional mechanisms. \\\bottomrule
+\end{tabularx}
 
-\status{reported draft evidence} The anonymous feedback draft reports decoding and targeted interventions in small transformers trained on synthetic processes, including substantial decoding at initialization \citep[PDF pp. 4--9, 36--38]{anonymousFeedback}. Such results motivate tests of representation and causal use; they do not establish internal agents or a general result about frontier language models.
+\textbf{Hypothesis.} Boundaries ranked highly for predictive compression need not rank highly for economical prediction of strategic response. \textbf{Alternative.} The best ordinary predictive or adaptive model may explain the same responses equally economically. This would weaken the case for an additional agency interpretation on those tasks.
 
-\topic{What would justify calling the organization an agent?}{Separate the formal tools from the proposed attribution.}
-\status{proposed conceptual criteria} Neither closure nor blanket existence supplies a necessary and sufficient definition of agency. A useful research claim should state a scale, environment, timescale, and target of regulation, then compare against alternatives.
+\citet[PDF pp. 1--5]{macdermott2024goals} supplies maximum-entropy goal-directedness as a comparator. It evaluates predictive support for goal hypotheses within a causal model, not endogenous autonomy. Any fitted utility class needs held-out evaluation and complexity control.
 
-\par\begin{tabularx}{\linewidth}{L{0.27\linewidth}Y}
-\toprule Working criterion & Evidence to seek \\\midrule
-Persistent organization & A recognizable interface or organization survives relevant perturbations or component changes over the task timescale. \\
-Effective action & Changing an output changes an environmental outcome under a specified intervention model. Prediction alone does not establish this. \\
-Feedback regulation & Responses to disturbances help maintain or recover a specified target or viable range; compare with an open-loop controller. \\
-Explanatory value at the collective scale & The collective model explains coordinated responses at a stated resource cost better than plausible component-only alternatives. \\\bottomrule
-\end{tabularx}\par
+The elementary diagnostic has been checked. The benchmark has not been implemented, and novelty relative to all neighboring abstraction work has not been established. A successful benchmark would still not validate an institutional recommendation; that is the second draft's separate question.
 
-\textbf{A research sequence.}
-\begin{enumerate}
-\item Fix the observations, candidate boundaries, timescale, and target. Avoid selecting these only after seeing a preferred answer.
-\item Estimate predictive states or directional statistics, with explicit finite-history and sampling approximations.
-\item Perturb candidate sensory and active channels, distinguishing a change in observation from a change in the physical generator.
-\item Test whether the proposed unit regulates a target under disturbance, and whether the collective description adds explanatory value.
-\item Ask separately whose goals are served and who has legitimate authority to decide.
-\end{enumerate}
+\topic{Reading map and exact coverage}{Downloaded full texts are not the same as fully read papers.}
+\small
+\begin{tabularx}{\linewidth}{L{0.35\linewidth}Y}\toprule
+Source and version & Reading used in this revision or retained from the earlier review \\\midrule
+Rosas et al. 2024, v2 & Cumulative PDF pp. 1--10, 14--30 of 33; closure claims use pp. 5--8. \\
+Causal blankets, v2 & All 12 PDF pages previously read; directional statistics and assumptions revisited. \\
+AI in a vat, v1 & PDF pp. 1--14 of 38 previously read; archived hash matches versioned arXiv PDF. \\
+J\o rgensen et al. 2026, v1 & PDF pp. 1--13 of 31. Main definitions and reported application; appendix proofs unread. \\
+Hammond et al. 2023, published & PDF pp. 1, 3, 10--12, 15--17 of 53. Contents page only scanned. \\
+Kenton et al. 2022, v2 & PDF pp. 1--6 of 34; later discovery theorems/proofs not audited. \\
+Ehrlich et al. 2026, v1 & PDF pp. 1--10, 24--25, 34--35 of 38. No replication or full version diff. \\
+Barandiaran et al. 2009 & PDF pp. 1, 5--8 of 20. \\
+Mont\'evil and Mossio 2015 & Author manuscript pp. 1, 8--13 of 23, dated 9 March 2016. \\
+Kolchinsky and Wolpert 2018 & PDF pp. 1--3 of 17; later formal sections unread. \\
+List and Pettit 2006 & Revised author manuscript pp. 1--4 of 22. \\
+MacDermott et al. 2024 & PDF pp. 1--5 of 20; proofs and experiments unread. \\
+Bruineberg et al. 2022 & Target-article PDF pp. 1--3 of the 76-page treatment; commentaries/reply unread. \\\bottomrule
+\end{tabularx}
+\normalsize
 
-\textbf{How to say the conceptual claim aloud.} ``These papers let us ask which distinctions organize prediction and interaction at a particular scale. I want to use those tools to identify candidate agent boundaries, then test whether the resulting units actually act and regulate through feedback. The agency step remains a hypothesis with additional evidential requirements.''
-
-\textbf{What the world-model papers add.} They make the action-conditioned question explicit and provide a language for building or decomposing models of an interface. This helps connect computational mechanics to neural representations. It also prevents the project from presenting action-conditioned sufficiency as a new invention.
-
-\takeaway{Agency can be a graded, empirically disciplined attribution without treating every predictable structure as an agent. Agency, moral standing, and legitimate decision authority remain distinct.}
-
-\topic{Worked bridge to human correction}{Perfect routine prediction can still omit a decision-relevant fact.}
-\status{checked analytical example} This is the repository's four-state example \citep{tanwisuth2026example}. It is not a counterexample to an action-complete predictive interface.
-
-Let $Z,R$ be independent fair bits. Choose $u\in\{0,1\}$ once:
-\begin{equation}
- Z'=\begin{cases}1-Z,&u=0\quad\text{(routine)},\\R,&u=1\quad\text{(switch)},\end{cases}
- \qquad \ell=1-Z'+\tfrac15u.
-\end{equation}
-Lower loss is better. Routine loss is $Z$; switch loss is $1-R+1/5$.
-
-\par\begin{tabularx}{\linewidth}{cccccY}
-\toprule $Z$ & $R$ & Routine & Switch & Full-info choice & Choice seeing only $Z$ \\\midrule
-0 & 0 & $0$ & $6/5$ & Routine & Routine \\
-0 & 1 & $0$ & $1/5$ & Routine & Routine \\
-1 & 0 & $1$ & $6/5$ & Routine & Switch \\
-1 & 1 & $1$ & $1/5$ & Switch & Switch \\\bottomrule
-\end{tabularx}\par
-
-\textbf{Step 1: full information.} At each row choose the lower loss. Averaging the four equally probable rows gives
-\begin{equation}
- L_{\mathrm{full}}=\tfrac14(0+0+1+\tfrac15)=\tfrac3{10}.
-\end{equation}
-\textbf{Step 2: a $Z$-only report.} The expected switch loss is
-$1-\E[R]+1/5=7/10$. Choose routine when $Z=0$ and switch when $Z=1$. Thus
-\begin{equation}
- L_Z=\tfrac14(0+0+\tfrac65+\tfrac15)=\tfrac7{20},\qquad
- L_Z-L_{\mathrm{full}}=\tfrac1{20}=0.05.
-\end{equation}
-The report predicts the routine $Z$ trajectory exactly, but fails to distinguish the two $Z=1$ cases when switching becomes available.
-
-\textbf{Connection to the second companion.} For an organization, a report might preserve expected performance while erasing a rare constraint needed to reject a plan. Test what the report preserves for the allowed corrective decisions. Then separately test whether a person can understand it in time and has the authority to act.
-
-\takeaway{Ask ``sufficient for which futures, under which actions, and for which outcomes?'' before treating predictive compression as support for human control.}
-
-\topic{Reading coverage and claim status}{Version-specific citations, with no implication that all proofs were independently checked.}
-Page numbers throughout are PDF page indices, starting at 1. Earlier repository reading and this companion pass are distinguished below.
-\par\begin{tabularx}{\linewidth}{L{0.26\linewidth}YY}
-\toprule Source & Cumulative reading recorded & Companion pass, 18 Nov 2026 \\\midrule
-Software, v2 & pp. 1--10, 14--30 of 33 & pp. 1, 5--8 revisited; earlier reviewed definitions govern notation. \\
-Blankets, v2 & All 12 pages & pp. 1, 4--7 revisited. \\
-AI in a vat, v1 & pp. 1--14 of 38; appendices unread & pp. 1, 4--6, 10 revisited. Archived PDF matched the versioned v1 checksum. \\
-Monoliths, v2 & Main text pp. 1--25 of 36; appendices unread & pp. 1, 3--5, 20--25 revisited, including scope limitations. \\
-Anonymous feedback draft & pp. 1--10, 24--26, 36--38 of 40 & Relies on the earlier same-day close reading; no replication. \\
-Schrader notes & All 14 pages & Title/author on p. 1 checked; pp. 7--10 reviewed earlier the same day. \\\bottomrule
-\end{tabularx}\par
-
-\textbf{What is established where?} Closure and blanket constructions are source results. World-model and decomposition results are formal claims in the cited preprints; their appendix proofs were not all independently checked here. Neural findings are reported draft results. The four-state example was checked by exact enumeration. The graded agency criteria and organizational transfer are proposed research directions.
-
-\textbf{What is not a usable citation yet?} The unavailable OpenReview manuscript identified as \texttt{ypgrlbGTTw} and the unresolved citation ``Strategic abstraction for multi-agent coordination'' remain excluded as evidentiary support. A related public paper does not establish the identity or claims of either missing source.
-
-\textbf{Citation completeness.} Public entries below include full author lists, title, exact arXiv version, date, and link. For private drafts, only metadata actually present in the supplied files or archive is recorded. Anonymous authors and missing publication dates are left explicit. Neither the drafts nor the meeting transcript are distributed with this public companion.
-
+The full citation guide records additional acquired and unresolved sources separately. This is a targeted review, not a systematic review of agency. A source result described here is not thereby independently verified. The exact local hashes and acquisition failures are retained in the research catalog.
 \references
 \end{document}

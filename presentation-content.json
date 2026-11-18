@@ -1,583 +1,590 @@
 {
   "date": "2026-11-18",
-  "audience": "Interdisciplinary research group",
-  "format": "Two 20-minute slots: approximately 15 minutes of presentation and 5 minutes of discussion, with optional backup slides",
+  "revision": 3,
+  "audience": "Research group",
+  "format": "20 minutes each: 15-minute talk plus 5-minute discussion; 12 main slides and 2 optional backups",
   "conceptual": [
     {
       "kind": "cover",
-      "title": "Agency across\nscales",
-      "subtitle": "Boundaries, representations,\nand the capacity to act",
+      "title": "When is a collective\nan agent?",
+      "subtitle": "Predictive organization and\nresponses to changed rules",
       "footer": "Sandy Tanwisuth\nResearch discussion · 18 November 2026",
-      "notes": "Opening, about 45 seconds. I want to connect our work on computational mechanics and neural representations to a question about agency: when do interacting components form a larger unit that can usefully be described as acting? My proposal is to approach this through interfaces and the distinctions they preserve. This is a conceptual argument with a developing formal specification. I will distinguish established source results, observations reported in the group's drafts, and my proposed extensions. The second talk will use AI islands as a concrete organizational test case. The cover is an AI-generated textile metaphor for organization across scales, not a measured network or scientific result."
+      "notes": "45 seconds. The question is when we gain explanatory power by treating a collection as an agent. There are three connected issues: agency in general, collective agency, and human agency within a collective. This talk focuses on the second. The companion talk asks about human control. We now have a stronger starting point than a chain of related ideas: Hammond and coauthors already formalize collective agency using causal abstraction. I want to ask what predictive organization adds to that framework, and what comparison could show that it adds nothing. This is a research proposal with a checked illustration, not a completed empirical result. The cover is a conceptual illustration, not data.",
+      "duration_seconds": 45
     },
     {
       "kind": "statement",
-      "title": "The organizing question",
-      "statement": "Which distinctions must survive a boundary for a system to respond effectively?",
-      "body": "A predictive pattern is a starting point.\nAn agency claim also needs an account of action and regulation.",
-      "notes": "About 75 seconds. A system can be composed of many interacting parts and still have a useful higher-level description. Think of a team that can revise a plan even as the people doing particular jobs change. The interesting question is what makes that description earn its place. I suggest looking at what enters and leaves the proposed unit, and what distinctions remain available when it must respond to a changed condition. This connects prediction to agency while leaving the criteria for agency open to discussion. I am using meaningful organization to mean organization that supports an explanatory and task-relevant description. This does not yet settle semantic meaning, consciousness, moral standing, or legitimate authority. This slide states the proposed synthesis, rather than a result from a single paper."
+      "title": "The question to investigate",
+      "statement": "When does an agent model predict collective responses better than a predictive pattern does?",
+      "body": "Fix the boundary, goals, and interventions before comparing models.",
+      "notes": "75 seconds. Consider a team whose routine decisions are easy to forecast. That forecast alone does not tell us how the team will react to a new incentive, a changed communication rule, or a member challenging the objective. A collective-agent model should explain some of these responses through a relatively economical account of goals and adaptation. The proposed comparison asks whether a macrodescription selected for predictive compression also works for these interventions. We should restrict the goals and intervention maps before evaluating outcomes; otherwise we can fit a story to almost anything. The point is to compare explanations on the same systems, with held-out changes.",
+      "duration_seconds": 75
     },
     {
       "kind": "table",
-      "title": "Process, representation, and authority",
+      "title": "Different claims need different evidence",
       "headers": [
-        "Object",
-        "Question"
+        "Claim",
+        "Evidence sought"
       ],
       "rows": [
         [
-          "Interacting process",
-          "What changes the system’s behavior?"
+          "Predictive organization",
+          "Macro history suffices for a specified future."
         ],
         [
-          "Observer’s representation",
-          "What information supports prediction and response?"
+          "Behavioral agency",
+          "Policies respond to changed consequences."
         ],
         [
-          "Institutional authority",
-          "Who can decide, intervene, or challenge?"
+          "Autonomous agency",
+          "Regulation sustains the system’s own organization."
+        ],
+        [
+          "Institutional agency",
+          "Collective commitments guide robust action."
         ]
       ],
-      "caption": "A simpler predictive model can help understanding. Effective authority requires separate evidence.",
-      "notes": "About 90 seconds. These distinctions are the backbone of both talks. First, there is the actual interacting process, including its communications and environmental effects. Second, there is an observer's representation, which might be a Bayesian belief, a neural activation, or a human-facing summary. Third, in organizations, there are rights and permissions over decisions. Hiding an exchange from an observer changes the second object. Removing the exchange changes the first. Giving a person an enforceable veto changes the third. If we change all of them at once, we cannot tell why an arrangement helped or failed. This is a modeling choice adopted for this project. It also prevents a neural observation about low-dimensional representations from silently becoming a claim about human power."
+      "caption": "Rosas et al. 2024; Kenton et al. 2022; Barandiaran et al. 2009; List & Pettit 2006",
+      "notes": "90 seconds. These are not rungs of one agreed definition. Computational mechanics studies predictive organization. Kenton and colleagues focus on policies adapting when the consequences of actions change. Barandiaran, Di Paolo, and Rohde ask for autonomous organization and norms grounded in it. List and Pettit emphasize robust rational representational and goal states in group agents. A reward-maximizing controller can fit a behavioral account without demonstrating endogenous norms. A group can satisfy a rationality model while members have little influence. Our main operational comparison uses behavioral agency and explicitly leaves the stronger autonomy and institutional questions open. Ask the group which account they want the model to explain.",
+      "duration_seconds": 90
     },
     {
       "kind": "rows",
-      "title": "A higher level with a description of its own",
+      "title": "What closure and blankets give us",
       "items": [
         [
-          "Predictive closure",
-          "Does the macro history retain the predictive information available from the micro history?"
+          "Closure",
+          "Does the macro past retain the micro past’s predictive information?"
         ],
         [
-          "Computational structure",
-          "Under the paper’s conditions, macro states can preserve a coherent portion of the underlying computation."
+          "Causal blanket",
+          "Which directional statistics summarize exchange across a chosen split?"
         ],
         [
-          "Task relevance",
-          "The retained distinctions must matter for the behavior we want to explain."
+          "Boundary choice",
+          "Compare candidates; blanket existence does not pick an agent."
         ]
       ],
-      "caption": "Existing closure framework plus a proposed requirement of task relevance",
-      "notes": "About 90 seconds. Software in the Natural World gives a precise language for higher-level organization. Compare predicting the future macroprocess from its own history with predicting it from the underlying micro history. Informational closure says the latter adds no predictive information. The paper defines causal-state and computational forms of closure as well, with specific relationships between them. The informational-to-computational implication discussed here uses spatial coarse-graining. I would add task relevance when selecting a description for our project, because a constant macrovariable could be closed without explaining anything useful. Closure across levels is compatible with ongoing exchange across an agent-environment boundary. Sources: Rosas et al., Software in the Natural World, arXiv:2402.09090v2, PDF pp. 3–8, especially the counterfactual qualifications on pp. 4 and 6. https://arxiv.org/abs/2402.09090v2"
-    },
-    {
-      "kind": "table",
-      "title": "Perception–action boundaries",
-      "headers": [
-        "Direction",
-        "Distinctions to retain"
-      ],
-      "rows": [
-        [
-          "Environment to system",
-          "Environment history that improves prediction of the system’s next state, given its own history"
-        ],
-        [
-          "System to environment",
-          "System history that improves prediction of the environment’s next state, given its own history"
-        ]
-      ],
-      "caption": "Causal blankets exist for every bipartition. The boundary still needs justification.",
-      "notes": "About 90 seconds. Causal Blankets starts with a candidate division into a system and its environment. It then constructs minimal dynamical sufficient statistics in each direction. These supply sensory and active sides of an informational interface. They can summarize a history, so they need not look like a physical membrane. The existence result is very general: each bipartition has such a blanket. That means existence alone cannot tell us which boundary is the agent. We should compare candidate divisions at a specified timescale, ask which make a useful description, and test proposed channels. The stronger trajectory-independence result requires factorisable dynamics. The paper explicitly warns that partial observation limits counterfactual guarantees. Source: Rosas et al., Causal Blankets, arXiv:2008.12568v2, PDF pp. 3–7. https://arxiv.org/abs/2008.12568v2"
+      "caption": "Rosas et al., Software in the natural world; Causal blankets. Bruineberg et al. 2022.",
+      "notes": "75 seconds. Predictive causal states group histories by their future distributions. Informational closure asks whether knowing the micro past adds anything to predicting the macro future once the macro past is known. That can make a macrodescription scientifically useful. It does not establish an unrestricted intervention result, and a constant macrovariable passes trivially. Causal blankets identify minimal directional statistics for a chosen system–environment split. They are available for each bipartition, so existence alone does not identify the right agent. Bruineberg and colleagues give a related conceptual caution about treating statistical blankets as worldly boundaries. This is a caution about interpretation, not a refutation of the causal-blanket construction.",
+      "duration_seconds": 75
     },
     {
       "kind": "rows",
-      "title": "A working account of agency",
+      "title": "From a stream to a world model",
       "items": [
         [
-          "Persistent organization",
-          "A recognizable unit and interface over the task’s timescale"
+          "Fixed-policy prediction",
+          "What happens while the current behavior continues?"
         ],
         [
-          "Effective action",
-          "Outputs that change relevant environmental outcomes"
+          "Controlled interface",
+          "What would be observed under another allowed action?"
         ],
         [
-          "Feedback regulation",
-          "Responses that maintain or recover a specified target under change"
-        ],
-        [
-          "Value of the collective description",
-          "An explanation that improves on a stated component-level alternative"
+          "Mechanism response",
+          "How do participants revise policies when the rules change?"
         ]
       ],
-      "caption": "Proposed graded criteria, open to revision",
-      "notes": "About 90 seconds. This is the additional conceptual commitment I want to discuss. I would require evidence of an organized unit that persists over a relevant timescale, effective action on its surroundings, and regulation through feedback. To justify a claim at a collective scale, I would also compare the explanatory value of that collective description with a specified alternative using components separately. These are working criteria, not necessary and sufficient conditions proven by the source papers. A thermostat may satisfy a minimal form of regulation. Planning, learning, and revising goals would support stronger claims, without making them mandatory for every minimal agent. We also need to state the target being maintained and avoid inventing a goal after observing a regularity. Agency remains separate from consciousness and from any right to decide for others."
-    },
-    {
-      "kind": "table",
-      "title": "The question can recur at different scales",
-      "headers": [
-        "Candidate unit",
-        "Illustrative test"
-      ],
-      "rows": [
-        [
-          "Neural subsystem",
-          "Does a selective intervention change a specific response across contexts?"
-        ],
-        [
-          "Organism or controller",
-          "Does feedback restore a target after a disturbance?"
-        ],
-        [
-          "Human–AI team",
-          "Can the group revise a plan when evidence or membership changes?"
-        ]
-      ],
-      "caption": "A shared research question does not establish identical mechanisms across these settings.",
-      "notes": "About 75 seconds. These are illustrations of how a question can recur, not evidence that the three systems instantiate the same mathematical model. In a neural system, we might perturb a candidate representation and ask what downstream behavior changes. In a controller, we might introduce an environmental disturbance. In a team, we might change the evidence or a participant and ask whether a coordinated response persists. An intervention-sensitive representation inside a predictor still does not automatically qualify as an agent. We would need the additional properties from the previous slide. The variables, feasible interventions, and outcomes change across domains. So the cross-scale connection is initially methodological: compare interfaces and responses. A stronger claim that a result transfers requires a specific mapping and evidence that the relevant mechanisms persist."
-    },
-    {
-      "kind": "table",
-      "title": "What the neural draft reports",
-      "headers": [
-        "Reported observation",
-        "What it supports"
-      ],
-      "rows": [
-        [
-          "Decodable predictive factors",
-          "A model can represent a useful decomposition"
-        ],
-        [
-          "Targeted belief patching",
-          "Interventions can test causal use of that representation"
-        ],
-        [
-          "Higher rank after observation masking",
-          "Less observed detail can make predictive representation more demanding"
-        ]
-      ],
-      "caption": "Small transformers on synthetic feedback processes. Reported draft results, not a replication here.",
-      "notes": "About 90 seconds. The feedback draft gives the most concrete link to our group's work. In small transformers trained on known interacting processes, it reports decodable per-factor beliefs, patching experiments that move predictions toward counterfactual references, and examples where omitting an observed stream raises effective rank. The patching evidence matters: it goes beyond a decoding correlation. But we should keep the scope explicit. The evidence concerns synthetic tasks with known reference beliefs. The factors are what the predictor represents, which is different from discovering autonomous agents inside the predictor. Also, presentation dimension, belief-cloud PCA rank, and neural effective rank are different quantities. I am omitting headline dimensional numbers to keep that distinction clear. Source: supplied Beliefs in Feedback Loops draft, PDF pp. 4–9, 36–38, archived 10 November 2026, SHA256 prefix 52e8f0c44838."
+      "caption": "Rosas, Boyd & Baltieri, AI in a vat; Hammond et al., Reasoning about causality in games.",
+      "notes": "75 seconds. AI in a vat gives us the action-conditioned bridge. Instead of only predicting a stream, a world model represents observations under possible action sequences. This is already established work and should not be presented as our innovation. It still fixes a controlled generator. In an organization, a rule change can cause participants to change the policies they use. Hammond and colleagues distinguish interventions with policies held fixed from interventions known when policies are selected. The distinction is about the information available to policy selection, not simply whether an event happens early or late. We need to include that mechanism response in what the proposed macro model predicts.",
+      "duration_seconds": 75
     },
     {
       "kind": "rows",
-      "title": "Tests that would strengthen the connection",
+      "title": "Collective agency already has a formal model",
       "items": [
         [
-          "Representation and use",
-          "Matched probes at initialization and after training, plus selective interventions"
+          "Alignment",
+          "Say which micro variables and interventions represent each macro variable."
         ],
         [
-          "Alternative implementations",
-          "Compare compact factors, nonlinear reconstruction, and access to earlier messages"
+          "Consistency",
+          "Mapped micro outcomes agree with macro outcomes under those interventions."
         ],
         [
-          "Robustness",
-          "Test changed policies, reveal orders, and correlated priors"
+          "Agency claim",
+          "A restricted goal-and-response model explains the macro behavior."
         ]
       ],
-      "caption": "Proposed next experiments",
-      "notes": "About 90 seconds. The next experiments should build on the draft's existing intervention tests. First, compare decoding across layers and training stages with matched decoder capacity. The draft already reports substantial decoding at random initialization, so high decoding alone is not the conclusion. Second, ask whether targeted edits have the intended effect without broad leakage into other factors. Third, compare ways the network could avoid storing a large joint table. Simon's notes describe factored storage with nonlinear reconstruction and using earlier tokens. Those are important alternative explanations. Finally, test new policy and reveal-order combinations and priors with initial dependence. The unverified propositions and preliminary approximations in Simon's draft remain unverified. Sources: feedback draft, p. 5 and pp. 24–26; Iliad_project_notes-1.pdf, pp. 7–10. These experiments have not been run in this repository."
+      "caption": "Jørgensen, Weichwald & Hammond 2026, Definitions 8–15; actor–critic and voting examples.",
+      "notes": "90 seconds. Causal Foundations of Collective Agency is the closest prior work. It formalizes mechanized abstraction: map micro variables to macro variables, map interventions, and require agreement of the induced outcome distributions. The framework can have multiple equilibria, hence sets of distributions rather than one prediction. It then asks whether the macro mechanism behaves rationally relative to a utility and rationality relation. The paper proves an actor–critic example and gives a voting application. Those are existing contributions. Our narrower proposed comparison concerns the relation between predictive compression and this strategic abstraction. We have not established that the comparison is novel across the whole literature.",
+      "duration_seconds": 90
     },
     {
       "kind": "table",
-      "title": "Routine prediction can miss a useful correction",
+      "title": "Same baseline, different response",
       "headers": [
-        "At Z = 1",
-        "Routine loss",
-        "Switch loss",
-        "Best action"
+        "Regime",
+        "Adaptive outcome",
+        "Frozen outcome"
       ],
       "rows": [
         [
-          "R = 0",
-          "1.0",
-          "1.2",
-          "Routine"
+          "Ordinary actuation",
+          "Target reached",
+          "Target reached"
         ],
         [
-          "R = 1",
-          "1.0",
-          "0.2",
-          "Switch"
+          "Announced reversal",
+          "Target reached",
+          "Target missed"
         ]
       ],
-      "caption": "Constructed example: a Z-only report incurs 0.05 excess expected loss overall.",
-      "notes": "About 2 minutes. This is the repository's checked constructed example. Z and R are independent fair bits. Routine behavior sets the next Z to one minus Z. Switching sets the next Z to R and adds a loss of 0.2. Loss is one minus the next Z, plus that switching cost. A report that contains only Z therefore predicts the routine Z trajectory perfectly. But when Z equals one, the best action depends on R. With only Z, the expected switching loss is 0.7, so the best rule switches. It loses 0.2 in the R-equals-zero case and loses nothing relative to full information in the other three equally likely cases. Hence overall excess loss is 0.05. Ask the group briefly which missing fact changes the choice. This is a one-step decision result, not an organizational experiment and not a counterexample to an action-complete transducer. Source: output/pdf/verify_counterexample.py, exact enumeration, rechecked 18 November 2026.",
-      "body": "Independent fair bits Z, R. Loss = 1 − Z′ + switching cost.\nRoutine: Z′ = 1 − Z. Switch: Z′ = R, with cost 0.2."
+      "caption": "Checked illustration: Y = 1 XOR A XOR g; adaptive A = g; frozen A = 0.",
+      "notes": "90 seconds. This tiny example is useful because it separates an observation from an interpretation. Let g indicate whether actuation is reversed and let the desired outcome be one. Under ordinary actuation, both systems choose zero and reach the target. When reversal is announced, the adaptive system chooses one while the frozen system stays at zero. Their baseline behavior is identical, but the mechanism response differs. The calculation is checked by exact enumeration. It is not new agency theory, and a simple conditional controller can realize the adaptive behavior. That is why conventional adaptive control belongs among our baselines. The example is a diagnostic, not evidence of collective or autonomous agency.",
+      "duration_seconds": 90
+    },
+    {
+      "kind": "rows",
+      "title": "What the feedback paper establishes",
+      "items": [
+        [
+          "Formal result",
+          "A product prior stays factored under the specified feedback update."
+        ],
+        [
+          "Reported neural evidence",
+          "Synthetic transformers often represent and use those factors; some edits fail."
+        ],
+        [
+          "Further question",
+          "Does a represented factor also support a goal-and-response explanation?"
+        ]
+      ],
+      "caption": "Ehrlich, Baltieri, Rosas & Boyd 2026, arXiv:2611.02047v1. No replication here.",
+      "notes": "90 seconds. The public feedback paper is now identified correctly, with David Ehrlich, Manuel Baltieri, Fernando Rosas, and Alexander Boyd as authors. The factorization proof preserves a product belief under a particular delayed feedback construction. It does not say arbitrary correlated priors become products. Masking an exchanged token requires summing product operators, which need not remain a product. In synthetic transformers the authors report factor decoding and successful belief edits, with failures in some sns-containing settings. These results help explain a predictor’s computation. They do not by themselves identify internal goal-directed agents. We should test that extra claim instead of assuming the terminology settles it.",
+      "duration_seconds": 90
+    },
+    {
+      "kind": "table",
+      "title": "A comparison we can actually run",
+      "headers": [
+        "Model",
+        "Held-out question"
+      ],
+      "rows": [
+        [
+          "Predictive macro model",
+          "Does compression transfer to changed mechanisms?"
+        ],
+        [
+          "Goal-based macro model",
+          "Does a restricted utility explain strategic responses?"
+        ],
+        [
+          "Component adaptive model",
+          "Does ordinary mechanism modeling explain just as much?"
+        ]
+      ],
+      "caption": "Proposed benchmark: matched data and stated computation budgets; not yet run.",
+      "notes": "90 seconds. Start small, with known coupled controllers. Include an actor–critic positive control, a frozen or replay negative control, and adaptive-control baselines. Choose candidate boundaries and outcomes first. Train or identify models on a limited intervention family, then test on held-out mechanisms and observation masks. Report error together with representation and computation costs, since a large unrestricted model can absorb many behaviors. We should not declare a collective agent solely because it fits the training data or because the microdescription is cumbersome. For equilibrium models, compare sets or specify a selection rule. This benchmark is proposed; we have not implemented the experimental comparison.",
+      "duration_seconds": 90
+    },
+    {
+      "kind": "rows",
+      "title": "What would weaken the agency interpretation?",
+      "items": [
+        [
+          "No added economy",
+          "An adaptive component model predicts just as well at comparable cost."
+        ],
+        [
+          "Goal overfitting",
+          "The macro utility must be refitted after every intervention."
+        ],
+        [
+          "Boundary instability",
+          "The preferred unit changes with small, irrelevant modeling choices."
+        ]
+      ],
+      "caption": "MacDermott et al. 2024 offers a goal-directedness comparator; utility/model choices remain explicit.",
+      "notes": "90 seconds. The main hypothesis is that predictive compression and strategic explanatory value can rank boundaries differently. We also need to be willing to find that the agent model adds little. If a conventional adaptive model predicts equally well at comparable cost, that limits the explanatory gain from agency language. If the utility has to be rewritten after every test, the model has not generalized. A very flexible utility class can rationalize behavior without predicting much; maximum-entropy goal-directedness is a useful comparator but still depends on causal and utility choices. Boundary sensitivity can also reveal that our conclusion is an artifact of the representation. These outcomes are informative research results, not failures to tell an attractive story.",
+      "duration_seconds": 90
     },
     {
       "kind": "statement",
-      "title": "An interface that supports correction",
-      "statement": "Histories merged by a report should remain sufficiently alike under the corrective policies we actually allow.",
-      "body": "Specify the action set, outcomes, horizon, and tolerance.\nMeasure decision loss and human effort separately.",
-      "notes": "About 90 seconds. This is the formal direction, phrased without committing to a final theorem. If a report makes two histories look identical, we want to know whether those histories have similar consequences under feasible future policies. We must fix what a policy can observe, which actions it can take, the future horizon, and the outcomes we care about. The criterion in the appendix uses distances between outcome distributions. It is deliberately strong and may be more than we need to preserve one particular decision, so task-specific decision loss also matters. This is not a new invention of action-conditioned sufficiency. AI in a Vat and the epsilon-transducer literature already treat interfaces over action sequences. The proposed extension concerns human-usable reports and constrained correction rights. Source: Rosas, Boyd and Baltieri, AI in a Vat, archived 38-page snapshot, PDF pp. 4–6 and 10. https://arxiv.org/abs/2504.04608"
+      "title": "The contribution is still a proposal",
+      "statement": "Test the relationship between predictive compression and strategic explanatory value.",
+      "body": "The collective-agency framework already exists.\nThe cross-model comparison remains to be done.",
+      "notes": "90 seconds. We now have a specific comparison rather than a historical narrative. The literature supplies definitions and examples. Our executed contribution so far is limited to elementary diagnostic calculations. The proposed contribution would be a controlled benchmark identifying when a compressed predictive description remains useful for strategic interventions, when it fails, and whether an agent model improves explanation. It may turn out that existing adaptive-control or abstraction methods already answer the task. Further novelty review is needed. Even a successful synthetic benchmark would not establish autonomy in living systems, institutional legitimacy, or human control. Those require additional evidence and, for authority, explicit normative commitments.",
+      "duration_seconds": 90
     },
     {
       "kind": "discussion",
-      "title": "The research claim to discuss",
-      "statement": "Interfaces can connect the study of predictive organization to the study of effective action.",
+      "title": "Discussion",
+      "statement": "What must an agent model explain that a predictive model does not?",
       "items": [
         [
+          "Interventions",
+          "Which changed rules should the model survive?"
+        ],
+        [
+          "Baseline",
+          "What would count as no added explanatory value?"
+        ],
+        [
           "Boundary",
-          "Which candidate partition earns its explanatory role?"
-        ],
-        [
-          "Agency",
-          "What evidence distinguishes regulation from a regular pattern?"
-        ],
-        [
-          "Control",
-          "Which distinctions must remain available for correction?"
+          "Do learning and institutional rules belong inside the agent?"
         ]
       ],
-      "notes": "Reserve about 5 minutes for discussion, adjusting earlier slides to fit the 20-minute slot. My claim is a research connection rather than a unified theory already proved. Computational mechanics supplies candidate representations and boundaries. Neural experiments can test their implementation and use. The agency proposal adds regulation and effective action. The organizational extension asks whose ability to correct decisions survives the interface. Invite objections to the proposed agency criteria first, then ask what the smallest decisive experiment would be. If the discussion turns to human authority, bridge to the second talk: even a representation that preserves the right distinctions needs an institution that lets a person act on them. The two formal source papers do not establish moral standing or legitimate decision authority."
+      "notes": "300 seconds. Use the remaining five minutes for these three questions. Start with a concrete collective the group cares about and specify one intervention whose outcome matters. Then identify a plausible non-agentic or conventional control explanation. Ask whether the learning process is inside the modeled boundary; Kenton’s account makes that consequential. If the group prefers an autonomous or institutional account, identify what extra observations would be required. End by choosing one tractable comparison, rather than agreeing only that all the papers connect.",
+      "duration_seconds": 300
     },
     {
       "kind": "rows",
-      "title": "Backup: a light formal specification",
+      "title": "Backup: primary readings",
+      "items": [
+        [
+          "Strategic agency",
+          "Jørgensen, Weichwald & Hammond (2026); Hammond et al. (2023); Kenton et al. (2022 v2)."
+        ],
+        [
+          "Organization",
+          "Rosas et al. (2024 v2; 2020 v2); Barandiaran et al. (2009); Montévil & Mossio (2015)."
+        ],
+        [
+          "Representation",
+          "Rosas et al. (2025 v1); Ehrlich et al. (2026 v1); MacDermott et al. (2024)."
+        ]
+      ],
+      "caption": "Full titles, all authors, source versions, links, and exact reading coverage: references.html and companion.",
+      "notes": "Optional backup. This slide is a navigation aid, not an assertion that every page of every source has been read. See the companion and online reading guide for exact coverage. In particular, the collective-agency appendix proofs and Kenton discovery algorithms have not been independently audited. The public feedback paper’s title is Beliefs in feedback: Factored representations of interacting agents in transformers, arXiv 2611.02047v1. Its author list is David A. Ehrlich, Manuel Baltieri, Fernando E. Rosas, and Alexander B. Boyd. The earlier anonymous attachment remains a distinct historical version.",
+      "duration_seconds": 0
+    },
+    {
+      "kind": "rows",
+      "title": "Backup: three cautions",
       "items": [
         [
           "Predictive closure",
-          "I(Z_future ; X_past | Z_past) = 0"
+          "Relative to chosen variables and futures; a constant macro can pass."
         ],
         [
-          "Directional interface",
-          "Y_next is independent of X_past given A and Y_past"
+          "Mechanized abstraction",
+          "Depends on alignments, admissible interventions, and solution concepts."
         ],
         [
-          "Proposed report requirement",
-          "Same report implies outcome laws within ε for every feasible policy σ"
+          "Belief dimension",
+          "Distribution parameters and PCA ranks are not universal neural or human limits."
         ]
       ],
-      "caption": "Fixed model, histories, report updates, horizon, outcome vector, and policy family",
-      "notes": "Optional backup, outside the timed core. The closure expression is shorthand for the relevant future horizons, with well-defined information quantities and the source's process assumptions. The directional interface also requires A to be a function of X's history, with minimality if constructing the minimal statistic. Reverse X and Y for the sensory direction. For the proposed report requirement, define Q^sigma(.|h) using the controlled generator initialized after history h and a common policy sigma implementable through the stated information and actions. Require sup over sigma of total-variation distance between Q^sigma(.|h) and Q^sigma(.|h') to be at most epsilon whenever tau(h)=tau(h'). A finite test establishes only tested coverage. This is a proposed sufficient-information criterion, not a new theorem or an agency definition. See the companion essay for the full specification and references."
-    },
-    {
-      "kind": "rows",
-      "title": "Backup: sources and evidentiary status",
-      "items": [
-        [
-          "Formal foundations",
-          "Software in the Natural World, v2 (2024)\nCausal Blankets, v2 (2020)\nAI in a Vat, archived 38-page snapshot"
-        ],
-        [
-          "Working drafts",
-          "Beliefs in Feedback Loops\nSimon’s Iliad project notes"
-        ],
-        [
-          "Completed here",
-          "Conceptual synthesis and exact four-state example\nNeural replication and organizational pilot remain proposed"
-        ]
-      ],
-      "caption": "Exact versions, reading coverage, and qualifications accompany the essays",
-      "notes": "Source links: https://arxiv.org/abs/2402.09090v2 ; https://arxiv.org/abs/2008.12568v2 ; https://arxiv.org/abs/2504.04608 . Local feedback draft SHA256 prefix 52e8f0c44838. AI in a Vat archived file SHA256 prefix 18f66e6a63c2, retrieved 10 November 2026, with no explicit version recorded in the catalog. This drafting pass reread Software pp. 2–8; Causal Blankets pp. 1–7; feedback pp. 1–9, 24–26, 36–38; Simon pp. 7–10; AI in a Vat pp. 1–2, 4–6, 8–10. Source reading does not mean independent proof verification or replication. Earlier cumulative coverage is in sources/metadata/reading-log.json. Unavailable OpenReview full text and the unresolved strategic-abstraction manuscript remain excluded as evidence."
+      "caption": "Source definitions and qualifications are developed step by step in the mathematical companion.",
+      "notes": "Optional backup. Use this slide if the discussion slips from one notion of closure to another. Predictive informational closure is not the same as biological closure of maintained constraints. Mechanized abstraction preserves specified intervention semantics; it does not certify every conceivable intervention. A factorized distribution has a compact parameterization, but minimal reachable belief dimension and neural encoding dimension are different questions. None of these mathematical properties alone supplies a measure of a person’s practical authority.",
+      "duration_seconds": 0
     }
   ],
   "organizational": [
     {
       "kind": "cover",
-      "title": "AI islands and\nhuman control",
-      "subtitle": "A design hypothesis\nfor human–AI organizations",
+      "title": "What must people\nretain control over?",
+      "subtitle": "AI islands, useful summaries,\nand the ability to correct decisions",
       "footer": "Sandy Tanwisuth\nResearch discussion · 18 November 2026",
-      "notes": "Opening, about 45 seconds. I want to build on Alec's islands proposal and ask what it would actually require in an organization. The guiding outcome is whether people can notice a consequential problem and change the decision. I will describe a concrete workflow, identify what the conceptual connection supports, and propose comparisons that could favor either islands or a less restrictive arrangement. This is a design hypothesis and proposed research program. No human pilot has been run. The cover image is an AI-generated textile metaphor used as a background, not a diagram of a measured system."
-    },
-    {
-      "kind": "rows",
-      "title": "Alec’s islands proposal",
-      "items": [
-        [
-          "Connected people",
-          "People retain direct relationships and opportunities to deliberate."
-        ],
-        [
-          "Observable AI exchanges",
-          "AI collaboration passes through interfaces people can inspect."
-        ],
-        [
-          "An unresolved design choice",
-          "Prevent direct AI messages, or permit them with effective review?"
-        ]
-      ],
-      "caption": "The meeting emphasizes separation. The written draft also considers observable communication.",
-      "notes": "About 90 seconds. The island metaphor reverses a picture in which people depend on a central AI while losing direct relationships with each other. In the meeting, Alec proposes people communicating directly and AIs communicating through people. The supplied written draft also makes observability and understanding central, allowing an interpretation in which a direct channel could remain if it is effectively reviewed. I want to keep these variants distinct because their practical implications differ. The meeting also raises beneficial coordination, shared priors, and indirect communication. Those objections belong in the design. We should not treat the transcript as independent verification of technical claims or external incidents. Sources: The Dimensional Balance of Power, working draft dated 26 October 2026, sections 5–6; local numbered meeting transcript, lines 107–136 and 141–169. The exact meeting date is not established."
+      "notes": "45 seconds. The first talk asked when a collective deserves an agent model. This one asks whether people can direct that collective. A group can become effective at pursuing an objective while its members become less able to question or change it. Alec’s AI-islands proposal gives us a concrete design to investigate. I will make the workflow explicit, use Lauffer’s minimal-knowledge result to clarify what reports must preserve, and separate the information problem from decision rights. The numbers in the worked example are invented and checked analytically. The organizational pilot remains a proposal.",
+      "duration_seconds": 45
     },
     {
       "kind": "statement",
-      "title": "The conceptual link",
-      "statement": "What people can observe may change the cost of understanding an interacting system.",
-      "body": "The feedback draft supplies a mechanism to investigate.\nHuman control still depends on usable information and effective authority.",
-      "notes": "About 90 seconds. Under the feedback draft's specified operators and an existing product-form belief, updates preserve a factored representation. Its synthetic examples also show how marginalizing an observed stream can make predictive representation more demanding. This gives us a reason to study communication interfaces. It does not directly establish a policy. Hiding a message from an observer leaves the message operating in the generator, whereas banning or rerouting it changes the process. Nor does a lower-dimensional predictor automatically become understandable to a person. We need an empirical bridge from predictive representation to usable review, and another from review to effective action. Sources: Beliefs in Feedback Loops, PDF pp. 4–9, 24–26 and 36–38. These are reported draft findings, not an organizational trial or a replication in this repository."
+      "title": "The core question",
+      "statement": "What must survive a handoff for a person to make a warranted correction?",
+      "body": "Relevant information and effective decision rights must be evaluated separately.",
+      "notes": "75 seconds. The goal is not for everyone to reconstruct every internal interaction. It is for the right people to have evidence that can change a decision and a usable way to act on it. We need to specify whose reasons count, which decisions can be revisited, and how much time there is before execution. More information can overwhelm someone; less information can hide exactly the fact that matters. A simple summary can be sufficient for one objective and fail after an authorized objective change. This gives us a specific research question rather than a general claim that transparency or human review is always good.",
+      "duration_seconds": 75
+    },
+    {
+      "kind": "rows",
+      "title": "A concrete islands workflow",
+      "items": [
+        [
+          "Local work",
+          "Each person and assistant develops a resource-allocation proposal."
+        ],
+        [
+          "Reviewed handoff",
+          "Evidence, assumptions, uncertainty, and dissent travel with the proposal."
+        ],
+        [
+          "Correction",
+          "People can query, revise, refuse, or appeal before execution."
+        ]
+      ],
+      "caption": "Our operationalization of the supplied XOR Labs / Alec proposal; fictional task, no pilot run.",
+      "notes": "90 seconds. Imagine a resource-allocation exercise with several teams. Each assistant can inspect local evidence and suggest a plan. A cross-team handoff carries not just a recommendation but its assumptions, evidence references, uncertainty, and any disagreement. A person reviews and forwards it, can request underlying evidence, and can refuse a proposed action. Final decision and execution permissions are specified separately, with an appeal route for affected people. These workflow details are our operationalization of the supplied AI-islands idea. They should not all be attributed to Alec. The important question is which part of the design creates any benefit: mediation, evidence access, or actual rights to change the outcome.",
+      "duration_seconds": 90
     },
     {
       "kind": "table",
-      "title": "Five choices inside an island design",
+      "title": "Do not bundle four different changes",
       "headers": [
-        "Choice",
+        "Change",
         "Example"
       ],
       "rows": [
         [
-          "Observation",
-          "Make an existing exchange available to a reviewer"
+          "Observation/reporting",
+          "Hide messages or summarize the same transcript."
         ],
         [
-          "Communication",
-          "Gate, remove, or reroute an exchange"
+          "Generator",
+          "Remove a channel or introduce review delays."
         ],
         [
-          "Reporting",
-          "Summarize while preserving access to dissent and evidence"
+          "Decision rights",
+          "Give someone an enforceable pause or revision."
         ],
         [
-          "Execution rights",
-          "Require approval before a specified commitment"
-        ],
-        [
-          "Objectives and standing",
-          "Decide whose interests and objections count"
+          "Objective",
+          "Authorize a different allocation criterion."
         ]
       ],
-      "caption": "Each choice changes a different part of the model or institution.",
-      "notes": "About 90 seconds. These choices make the proposal concrete. Observation is what the reviewer can access. Communication is how the participants actually exchange information. Reporting is the representation offered to the reviewer. Execution rights determine who can commit an action. Objectives and standing specify the values and people the arrangement serves. A shared writable document belongs in the communication specification even if nobody sends a chat message. Timing belongs in the first four choices because evidence that arrives after an irreversible action cannot support that correction. If all five change at once, an outcome difference is difficult to interpret. This separation is the project's proposed modeling discipline, informed by the source distinctions between observation and generator changes. It is not a claim that information theory chooses legitimate objectives."
+      "caption": "Hiding a channel from an observer does not simulate deleting it from the system.",
+      "notes": "75 seconds. This separation is the backbone of the study. Masking a message changes what someone can observe. Removing the message channel changes the interacting process. Giving someone a veto changes available actions. Changing the criterion for a good allocation changes the objective. An islands design can change all four at once, making its apparent benefit difficult to explain. First use a fixed generator to isolate the information effect. Then compare live communication arrangements with matched final rights and evidence access. Finally vary rights independently. Some interactions will remain, but stating them explicitly is much better than attributing every improvement to human mediation.",
+      "duration_seconds": 75
     },
     {
       "kind": "rows",
-      "title": "A fictional research-budget decision",
+      "title": "Who needs to know what?",
       "items": [
         [
-          "Evidence assistant",
-          "Reviews proposals in a private workspace"
+          "Existing result",
+          "Co-policies are strategically equivalent when they induce the same best-response set."
         ],
         [
-          "Human handoff",
-          "Checks sources, uncertainty, and dissent before sharing a report"
+          "Useful compression",
+          "Keep distinctions that change the decision; other details can be omitted."
         ],
         [
-          "Planning assistant",
-          "Proposes an allocation from the approved material"
-        ],
-        [
-          "Human decision",
-          "Inspects objections and authorizes the final allocation"
+          "Scope",
+          "Equivalence depends on the decision problem, including objectives and feasible actions."
         ]
       ],
-      "caption": "Illustrative pilot. No real funds move. Direct human discussion remains available.",
-      "notes": "About 2 minutes. Here is one concrete island condition. An evidence assistant and a planning assistant support people allocating a fictional budget. The evidence assistant works in a private workspace. Its human partner checks a structured handoff before it becomes an input to the planner. The handoff includes sources, uncertainty, and dissenting evidence, with access to the originals. Shared writable tools are restricted or explicitly accounted for. Humans can talk directly and ask for revisions. A designated human authorizes the final decision. Now introduce a missed constraint affecting a small proposal. Can someone recover the evidence and change the allocation before authorization? That is the test. Reviewers may also lose information or become a bottleneck. A logged collaboration condition with identical final execution rights is therefore an essential comparator. This workflow is our proposed example, not Alec's fully specified protocol and not an experiment already conducted."
-    },
-    {
-      "kind": "rows",
-      "title": "Control as an observable sequence",
-      "items": [
-        [
-          "Evidence in time",
-          "The relevant information arrives before commitment."
-        ],
-        [
-          "Understanding",
-          "A person recognizes the consequential problem."
-        ],
-        [
-          "Standing and means",
-          "The person can challenge the plan and request a change."
-        ],
-        [
-          "Effective correction",
-          "The intervention changes the outcome before the relevant harm."
-        ]
-      ],
-      "caption": "Measure failures at each step, along with unnecessary vetoes, effort, and task quality.",
-      "notes": "About 90 seconds. This is our proposed operational account of control. It is deliberately more demanding than showing a human in a workflow diagram. First, relevant information must arrive in time. Second, someone must understand enough to recognize the problem. Third, that person needs standing and an effective way to intervene. Fourth, the intervention must change the outcome. We should measure each step separately so we can diagnose the mechanism. A design might improve visibility while worsening correction because people become overloaded. We also need to name whose control we mean. A manager may gain authority while a worker or affected stakeholder loses a way to contest the decision. Measure mistaken vetoes as well as successful ones, and preserve task performance and human effort as separate outcomes. This is a project proposal rather than an established empirical finding."
+      "caption": "Lauffer, Shah, Carroll, Dennis & Russell (ICML 2023), Who Needs to Know?",
+      "notes": "75 seconds. Lauffer and coauthors give us a precise starting point. For one player, take the other participants’ possible policies and group those that induce the same entire set of best responses. Those classes retain the distinctions needed to recover that set. This is stronger than merely retaining one common optimal action. Their computational work focuses on common-payoff dynamic games, while the paper states that the theory extends to general-sum settings. We should not pretend this is a new result. Our question is how a reporting interface performs when an authorized decision context changes, and whether a human can actually infer and use the reported distinctions.",
+      "duration_seconds": 75
     },
     {
       "kind": "table",
-      "title": "Three initial comparisons",
+      "title": "A summary can fail after priorities change",
       "headers": [
-        "Condition",
-        "AI interaction",
-        "Main question"
+        "Co-policy",
+        "Routine best action",
+        "Revised best action"
+      ],
+      "rows": [
+        [
+          "C",
+          "A",
+          "A"
+        ],
+        [
+          "D",
+          "B",
+          "B"
+        ],
+        [
+          "E",
+          "A",
+          "B"
+        ]
+      ],
+      "caption": "Checked toy example: routine report merges C and E. Revised objective needs to distinguish them.",
+      "notes": "90 seconds. Here the co-policy can be C, D, or E, each equally likely. Under the routine objective, A is best in C and E, so one report can merge those types. Under the revised objective, E instead calls for B while C still calls for A. The old report has erased a relevant distinction. The companion gives the complete payoff table: under the revised objective, A pays four, zero, zero across C, D, E, while B pays two, three, two. With full information the expected value is three. With the old C/E report, both actions average two in that cell, giving total value seven thirds. The information loss is two thirds.",
+      "duration_seconds": 90
+    },
+    {
+      "kind": "table",
+      "title": "Less required knowledge can mean less control",
+      "headers": [
+        "Arrangement",
+        "Revised value",
+        "Information regret"
+      ],
+      "rows": [
+        [
+          "Full report; A or B",
+          "3",
+          "0"
+        ],
+        [
+          "Old report; A or B",
+          "7/3",
+          "2/3"
+        ],
+        [
+          "Any report; only A",
+          "4/3",
+          "0 within those rights"
+        ]
+      ],
+      "caption": "Invented unitless payoffs; uniform prior. Exact enumeration, not a human-subject result.",
+      "notes": "90 seconds. Now remove the right to choose B. The only feasible best response is A for all types, so no information is needed to recover it. The information regret relative to full information under those same restricted rights is zero. Nevertheless, attainable value has fallen to four thirds. This shows why minimal information alone is an inadequate measure of control. One must compare both information loss within a rights arrangement and the options available across rights arrangements. The script exhausts every deterministic partition of the three types and checks the arithmetic exactly. It establishes this illustration, not a general effect size for organizational oversight.",
+      "duration_seconds": 90,
+      "column_widths": [
+        440,
+        260,
+        432
+      ]
+    },
+    {
+      "kind": "rows",
+      "title": "What the world-model work contributes",
+      "items": [
+        [
+          "Feedback prediction",
+          "Masking exchanged tokens can break a useful factorization."
+        ],
+        [
+          "Strategic response",
+          "Announced rule changes can alter other participants’ policies."
+        ],
+        [
+          "Human control",
+          "A compact predictor does not settle whose reasons guide execution."
+        ]
+      ],
+      "caption": "Ehrlich et al. 2026; Rosas et al., AI in a vat; Hammond et al. 2023; Santoni de Sio & van den Hoven 2018.",
+      "notes": "90 seconds. The feedback paper gives a reason to worry about hiding interactions: the observer’s belief may become harder to represent. It does not prove that exposing every interaction helps a person make a decision. AI in a vat helps distinguish prediction from action-conditioned modeling. Hammond and colleagues further show why an announced rule change differs from a surprise event with policies fixed. Finally, Santoni de Sio and van den Hoven emphasize responsiveness to relevant human reasons and tracing to people with understanding and responsibility. A click on an approval screen is evidence of neither by itself. These literatures constrain the design in different ways; none alone establishes the best workflow.",
+      "duration_seconds": 90
+    },
+    {
+      "kind": "table",
+      "title": "Compare three designs",
+      "headers": [
+        "Design",
+        "Cross-team communication"
       ],
       "rows": [
         [
           "Logged collaboration",
-          "Direct exchange with inspectable evidence",
-          "What can ordinary review achieve?"
+          "Direct assistant exchanges with evidence and provenance."
         ],
         [
-          "Human relay",
-          "A person reads and forwards the handoff",
-          "Does a review gate help?"
+          "Human-mediated islands",
+          "A person reviews and forwards each handoff."
         ],
         [
-          "Human-edited handoff",
-          "A person checks and edits the report",
-          "Does active mediation preserve correction?"
+          "Delegation with escalation",
+          "Routine exchange; review on specified conflicts."
         ]
       ],
-      "caption": "Hold final human authority and shared-workspace permissions constant initially.",
-      "notes": "About 90 seconds. Begin with these three conditions on the same task family. Keep final execution rights and shared-workspace permissions constant. The inputs can be matched, but the realized messages and human attention will differ, and we should measure those differences rather than claim perfect information matching. The human-relay condition helps separate routing from substantive editing. If mediation improves correction, add a delay-matched direct-collaboration condition to see whether the gain comes simply from slowing decisions. Then study bounded delegated execution in a separate stage. Otherwise, we might attribute the benefit of requiring approval to the topology of communication. This is a staged comparison design. We have not yet selected final task materials, numerical success thresholds, or sample size. Those require feasibility work before a confirmatory study."
+      "caption": "Proposed comparison: match final correction rights, task resources, model version, and evidence access.",
+      "notes": "90 seconds. These three designs allow us to ask whether universal mediation adds something beyond evidence access and targeted escalation. Keep final correction rights comparable at first. Introduce routine cases, errors, cross-team inconsistencies, and an explicitly authorized change in priorities. For a replay experiment, freeze the generator and compare reports. For live interaction, allow the design to affect delay and strategic adaptation, and measure those effects. A report can be refreshed after a context changes if evidence and time remain available; this is a serious alternative to requiring every future-relevant distinction in the initial handoff. We should compare fixed and adaptive reporting rather than make the compressed baseline artificially weak.",
+      "duration_seconds": 90,
+      "column_widths": [
+        380,
+        752
+      ]
     },
     {
       "kind": "rows",
-      "title": "Separation can leave important dependencies",
+      "title": "Measure correction, cost, and influence",
       "items": [
         [
-          "Shared causes",
-          "Common inputs or correlated initialization can align behavior."
+          "Correction",
+          "Did evidence change the decision before execution? Whose objection mattered?"
         ],
         [
-          "Indirect channels",
-          "Files, tools, and environmental changes can transmit information."
+          "Cost",
+          "Regret, false interventions, delay, and workload."
         ],
         [
-          "Opaque mediation",
-          "A visible handoff can carry distinctions its reviewer misses."
+          "Rival explanation",
+          "Logged collaboration with escalation may work as well or better."
         ]
       ],
-      "caption": "Identical software alone does not prove a secret runtime channel.",
-      "notes": "About 90 seconds. The meeting's shared-prior objection is important. Two instances may respond similarly because of common information or dependencies established before the task. That is different from discovering a hidden runtime channel. We should avoid treating shared architecture itself as proof of communication. At the same time, removing direct messages does not establish statistical independence. The feedback proof assumes an existing product form and shows how it is preserved; it does not establish that observation erases arbitrary prior dependence. We must also account for shared artifacts and environmental actions, which can carry information. Finally, a human may forward content without understanding everything it communicates. A routing requirement does not certify comprehension. Sources: meeting transcript, lines 141–169; feedback draft, PDF pp. 24–26. These are qualifications motivating tests, not a claim about any named deployed service's actual data sharing."
+      "caption": "No organizational experiment run. Numerical thresholds and sample planning remain to be specified.",
+      "notes": "90 seconds. Correction success is central, but it should not be measured without costs. A workflow can stop errors by stopping useful work too. Record false interventions, delay, workload, and whether source evidence was actually accessible. Also report whose objections change outcomes and who can revise the objective. Where stakeholders disagree, do not silently combine them into one team payoff. The rival hypothesis is that direct logged collaboration with selective escalation provides the same correction capacity more cheaply. If so, the general case for universal islands weakens. We have not justified numerical success thresholds or a sample size; the toy values are not empirical estimates for power analysis.",
+      "duration_seconds": 90
     },
     {
-      "kind": "table",
-      "title": "Costs and limits of islands",
-      "headers": [
-        "Potential cost",
-        "Why it matters"
-      ],
-      "rows": [
-        [
-          "Reviewer bottlenecks",
-          "Workload and delay may defeat useful oversight"
-        ],
-        [
-          "Lost collaboration",
-          "Assistants may miss contradictions or produce incompatible plans"
-        ],
-        [
-          "Selective visibility",
-          "Summaries may suppress rare or dissenting evidence"
-        ],
-        [
-          "Concentrated authority",
-          "Separate assistants may still depend on one provider or gatekeeper"
-        ]
-      ],
-      "caption": "Coordination quality and individual human agency need separate evaluation.",
-      "notes": "About 90 seconds. A design that makes some actions more predictable may also make the organization less capable. Restricting collaboration can remove useful cross-checking. Human reviewers can become overloaded, especially if a high volume of routine approvals makes the exceptional case harder to notice. Summaries can hide the very disagreement needed for correction. Local separation also leaves questions of ownership, access, and exit. A person might have a nominal veto while lacking the expertise, time, or institutional security to exercise it. These are proposed failure mechanisms to measure, not effects already demonstrated by this research. Sandy's concern in the meeting about beneficial coordination is central here: we want warranted collective action that remains contestable. Source for that discussion: numbered transcript, lines 107–110."
-    },
-    {
-      "kind": "table",
-      "title": "What would support or weaken the hypothesis?",
-      "headers": [
-        "Observation",
-        "Implication"
-      ],
-      "rows": [
-        [
-          "Correction improves within cost limits",
-          "Supports mediation in this task and setting"
-        ],
-        [
-          "Logged collaboration matches it",
-          "Weakens the case for requiring mediation"
-        ],
-        [
-          "Delay alone reproduces the benefit",
-          "Points toward timing or permission controls"
-        ],
-        [
-          "Rare evidence or task quality suffers",
-          "Counts against the tested island design"
-        ]
-      ],
-      "caption": "Proposed tests, with decision criteria specified before the confirmatory study",
-      "notes": "About 90 seconds. The pilot should have ways to reject our preferred story. Introduce a known error, a changed constraint, or a consequential dissenting signal. Randomize task versions and condition order where feasible. Evaluate successful correction separately from detection, unnecessary vetoes, elapsed time, overall quality, and reviewer effort. After a feasibility pilot, set quantitative thresholds and sample planning before the confirmatory study. A positive result would support a mechanism in that task, not a general claim about society. If direct logged collaboration performs as well, then requiring people to relay everything may be unnecessary. If delay explains the effect, a rate or permission limit may be simpler. If mediation drops rare evidence, the interface needs revision even when average prediction looks good. These are pre-result evaluation criteria."
-    },
-    {
-      "kind": "rows",
-      "title": "Conditional policy implications",
-      "items": [
-        [
-          "Where mediation improves correction",
-          "Require reviewed handoffs for the relevant decisions."
-        ],
-        [
-          "Where execution outruns review",
-          "Bound delegated actions or change approval timing."
-        ],
-        [
-          "Where summaries lose consequential evidence",
-          "Preserve source access and an exception route."
-        ],
-        [
-          "As a normative commitment",
-          "Protect direct human deliberation and ways to contest authority."
-        ]
-      ],
-      "caption": "Candidate governance requirements. Current evidence does not establish a universal communication ban.",
-      "notes": "About 90 seconds. These are conditional design proposals that could eventually become organizational requirements. Each should name its mechanism, scope, human cost, and a result that would overturn it. The first three depend on evidence about how a particular workflow fails. The last expresses a value commitment: people should retain meaningful participation and a way to contest authority. Information theory alone cannot choose that commitment. It can help us investigate whether an implementation supports it. We should also distinguish local governance proposals from claims about existing law; this talk makes no legal claim. The strongest current output is a concrete research program: specify the interface, test correction, account for costs, and retain the possibility that direct collaboration with appropriate permissions is better in some settings."
+      "kind": "statement",
+      "title": "A conditional organizational implication",
+      "statement": "Preserve the distinctions needed for correction—and the rights to act on them.",
+      "body": "Test mediation against alternatives.\nCollective capability does not establish member control.",
+      "notes": "90 seconds. The recommendation we can currently defend is to specify what people must be able to challenge, preserve access to evidence that could change those judgments, and test whether their interventions really affect execution. Human mediation may be useful when it exposes omitted evidence and prompts effective challenge. It can fail through rubber-stamping, lack of expertise, bottlenecks, or corrupted handoffs. Separate channels can still share model errors and incentives. If a benefit comes entirely from an enforceable veto, that supports the veto rather than universal message review. Our task is to identify those mechanisms and the conditions under which they work.",
+      "duration_seconds": 90
     },
     {
       "kind": "discussion",
-      "title": "The decision for the research group",
-      "statement": "Which mechanism should the first islands experiment isolate?",
+      "title": "Discussion",
+      "statement": "What must an affected person be able to notice, challenge, and change?",
       "items": [
         [
-          "Information",
-          "Does a structured report preserve what people need?"
+          "Objectives",
+          "Who can authorize a change in priorities?"
         ],
         [
-          "Timing",
-          "Does review arrive early enough to matter?"
+          "Evidence",
+          "Which distinctions must survive, or remain retrievable?"
         ],
         [
-          "Authority",
-          "Can a person make the correction effective?"
+          "Test",
+          "What outcome would count against universal mediation?"
         ]
       ],
-      "notes": "Reserve about 5 minutes for discussion, fitting the full presentation into a 20-minute slot. Ask Alec which mechanism is essential to the proposal and what comparison would persuade him to permit a direct AI channel. Ask the group whose corrections should count and which dissenting evidence must survive a report. My suggested first study holds final human authority fixed and compares communication and reporting arrangements. That keeps the mechanism interpretable. Then study delegation separately. These are discussion prompts, not assignments accepted by anyone. Close with the relationship to the first talk: identifying useful organization tells us something about a system's interface, while designing an institution requires deciding who can act through that interface and assessing whether the action works."
+      "notes": "300 seconds. Reserve five minutes for these questions. Ask the group to pick a concrete allocation or coordination decision. Identify the affected people and which reasons should count, rather than assuming a single manager is the only relevant human. Then specify one correction that the workflow must permit and the evidence needed to justify it. Finally ask what result would lead us to prefer logged collaboration or selective escalation instead of islands. This should produce a bounded pilot question and an explicit authority assumption, not a general endorsement of human oversight.",
+      "duration_seconds": 300
     },
     {
       "kind": "table",
-      "title": "Backup: what remains separate",
+      "title": "Backup: complete payoff table",
       "headers": [
-        "Distinct concepts",
-        "Reason"
+        "Objective / action",
+        "C",
+        "D",
+        "E"
       ],
       "rows": [
         [
-          "Observation masking and deleting a channel",
-          "One changes the observer, the other changes the process"
+          "Routine A",
+          "4",
+          "0",
+          "4"
         ],
         [
-          "A rank estimate and a human attention budget",
-          "They measure different resources"
+          "Routine B",
+          "2",
+          "3",
+          "2"
         ],
         [
-          "Seeing a message and understanding it",
-          "Comprehension needs an operational test"
+          "Revised A",
+          "4",
+          "0",
+          "0"
         ],
         [
-          "Collective agency and legitimate authority",
-          "Power and justification require separate arguments"
+          "Revised B",
+          "2",
+          "3",
+          "2"
         ]
       ],
-      "caption": "Modeling commitments for the proposed pilot",
-      "notes": "Optional backup. These distinctions address the most likely overextensions of the conceptual connection. No general theorem translates a neural PCA dimension into the capacity of a human reviewer. Likewise, a larger joint simplex is an ambient representation budget, not proof that every predictor must store that many coordinates. Simon's notes motivate nonlinear and lookback comparisons. The policy discussion should preserve the useful question about asymmetric understanding while avoiding a single complexity inequality as a safety criterion. Sources: feedback draft pp. 37–38; Simon's Iliad notes pp. 7–10; Alec's working draft sections 2–6, treated as a tentative proposal."
+      "caption": "All types have probability 1/3. Source: repository-authored verify_strategic_reports.py.",
+      "notes": "Optional backup. The routine partition is C/E versus D. The revised partition is C versus D/E. Their common refinement has three singleton cells. With a fixed report serving both contexts, all three types must be distinguished to recover the full best-response set. This is an elementary common-refinement construction based on Lauffer’s SER, not a new theorem. For another task, preserving one common optimal action can need fewer distinctions than recovering the entire set; the companion gives an overlapping-set example.",
+      "duration_seconds": 0
     },
     {
       "kind": "rows",
-      "title": "Backup: source and project status",
+      "title": "Backup: primary readings",
       "items": [
         [
-          "Proposal and discussion",
-          "Alec’s working draft, 26 October 2026\nLocal meeting transcript, lines 107–169"
+          "Coordination",
+          "Lauffer et al. (2023), Who Needs to Know? Minimal Knowledge for Optimal Coordination."
         ],
         [
-          "Technical motivation",
-          "Beliefs in Feedback Loops, supplied review draft\nSoftware in the Natural World and Causal Blankets"
+          "Causal agency",
+          "Hammond et al. (2023), Reasoning about causality in games; Jørgensen et al. (2026)."
         ],
         [
-          "Current status",
-          "Essays and talk drafts prepared\nPilot sketch proposed, experiments pending"
+          "Control and feedback",
+          "Santoni de Sio & van den Hoven (2018); Ehrlich, Baltieri, Rosas & Boyd (2026)."
         ]
       ],
-      "caption": "No external incident narrative or unavailable manuscript supplies evidence for these recommendations.",
-      "notes": "The Dimensional Balance of Power is a supplied working draft dated 26 October 2026, SHA256 prefix 58410c3ad879. All six substantive sections and figure captions were reviewed during this pass. The local transcript's 169 numbered lines were reviewed, with exact date and some speaker labels unresolved. Beliefs in Feedback Loops is the supplied anonymous ICLR 2027 review draft, SHA256 prefix 52e8f0c44838. Formal foundations: https://arxiv.org/abs/2402.09090v2 and https://arxiv.org/abs/2008.12568v2 . Exact reading coverage is in the companion essays and sources/metadata/reading-log.json. The OpenReview full text and exact strategic-abstraction manuscript remain unavailable or unresolved and are not used as evidence. No neural training or human trial was conducted for this package."
+      "caption": "Full authors, publication details, exact versions, links, and reading coverage in the companion and source guide.",
+      "notes": "Optional backup. The source guide includes all authors and exact page coverage. Lauffer is cited from the official ICML proceedings version, distinct from the separately cached arXiv version. Hammond is cited from the published Artificial Intelligence article. The feedback paper is the public 38-page arXiv v1 of 1 November 2026, distinct from the anonymous 40-page attachment. The supplied XOR Labs presentation remains an unpublished motivation, not evidence that islands have been tested. Downloaded source texts are kept locally and are not distributed with the public reading package.",
+      "duration_seconds": 0
     }
   ]
 }
